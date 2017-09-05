@@ -1,0 +1,4 @@
+talvi,tulo
+sohva,istuskella
+tee,itsemurha
+vappu,viett‰‰,huvittaa

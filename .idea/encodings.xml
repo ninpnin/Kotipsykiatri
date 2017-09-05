@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/VERBS/homonyymit.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/homonyymit.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/aiheet.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/aihiot1.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/causalities.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/kalle.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/lauseet.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/yleiskvastaukset.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/puhujandata/yleisvastaukset.txt" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/convo/Conversation.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/convo/SpeechGenerator.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/convo/Word.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/convo/reactionAdder.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/Nominal.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/Verb.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/dictionaryFinder.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/encoder.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/grammarHelper.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/dictionary/wordInflector.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/gui/kotipsykiatri.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/gui/tekoalynLisaaja.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/UnitVerbs.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/coompoundSorter.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/hnTunnistaja.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/joogo.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/puhujaTesti.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/rateTest.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/sanaluokkaTesti.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/taivuttaja.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/unitNominit.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/tests/wordSorter.scala" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/yhdys.txt" charset="ISO-8859-1" />
+    <file url="PROJECT" charset="ISO-8859-1" />
+  </component>
+</project>

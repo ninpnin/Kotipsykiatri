@@ -1,0 +1,11 @@
+ei,en,et,ei,emme,ette,eivät,ei,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,älä
+olla,olen,olet,on,olemme,olette,ovat,ollaan,olin,olit,oli,olimme,olitte,olivat,oltiin,olisin,olisit,olisi,olisimme,olisitte,olisivat,oltaisiin,ole,ollut,olleet,olema
+syödä,syön,syöt,syö,syömme,syötte,syövät,syödään,söin,söit,söi,söimme,söitte,söivät,syötiin
+juoda,juon,juot,juo,juomme,juotte,juovat,juodaan,join,joit,joi,joimme,joitte,joivat,juotiin,joisin,joisit,joisi,joisimme,joisitte,joisivat,juotaisiin,juo,juonut
+käydä,käyn,käyt,käy,käymme,käytte,käyvät,käydään,kävin,kävit,kävimme,kävitte,kävivät,käytiin
+taitaa,taidan,taidat,taitaa,taidamme,taidatte,taitavat,taidetaan,taisin,taisit,taisi,taisimme,taisitte,taisivat,taidettiin,taitaisin,taitaisit,taitaisi,taitaisimme,taitaisitte,taitaisivat,taidettaisiin,taida,taitanut
+tuntea,tunnen,tunnet,tuntee,tunnemme,tunnette,tuntevat,tunnetaan,tunsin,tunsit,tunsivat
+jäädä,jään,jäät,jää,jäämme,jäätte,jäävät
+lähteä,lähden,lähdet,lähtee,lähdemme,lähdette,lähtevät,lähdetään
+saada,saan,saat,saa,saamme,saatte,saavat,saadaan,sain,sait,sai,saimme,saitte,saivat,saatiin,saisin,saisit,saisi,saisimme,saisitte,saisivat,saataisiin,saa,saanut
+haluta,haluan,haluat,haluaa,haluamme,haluatte,haluavat,halutaan,halusin,halusit,halusi,halusimme,halusitte,halusivat,haluttiin,haluaisin,haluaisit,haluaisi,haluaisimme,haluaisitte,haluaisivat,haluttaisiin,halua,halunnut,halunneet,haluama

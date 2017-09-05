@@ -1,0 +1,9 @@
+minä,minut,minun,minua,minussa,minusta,minuun,minulla,minulta,minulle,minuna,minuksi
+sinä,sinut,sinun,sinua,sinussa,sinusta,sinuun,sinulla,sinulta,sinulle,sinuna,sinuksi
+hän,hänet,hänen,häntä,hänessä,hänestä,häneen,hänellä,häneltä,hänelle,hänenä,häneksi,he,heidät,heidän,heitä,heissä,heistä,heihin,heillä,heiltä,heille,heinä,heiksi
+me,meidät,meidän,meitä,meissä,meistä,meihin,meillä,meiltä,meille,meinä,meiksi
+te,teidät,teidän,teitä,teissä,teistä,teihin,teillä,teiltä,teille,teinä,teiksi
+tämä,tämän,tämän,tätä,tässä,tästä,tähän,tällä,tältä,tälle,tänä,täksi,nämä,nämä,näiden,näitä
+tuo,tuon,tuon,tuota,tuossa,tuosta,tuohon,tuolla,tuolta,tuolle,tuona,tuoksi,nuo,nuo,noiden
+se,sen,sen,sitä,siinä,siitä,siihen,sillä,siltä,sille,sinnä,siksi,ne,ne,niiden,niitä,niissä,niistä,niihin,niillä,niiltä,niille,niinä,niiksi
+mikä,minkä,minkä,mitä,missä,mistä,minne,millä,miltä,mille,minä,miksi
