@@ -2,12 +2,12 @@ package dictionary
 
 abstract class Nominal(val sana: String, astevaihtelu: Char) {
     def taivuta(sijamuoto: Int, plural: Boolean): String
+    val a = grammarHelper.vokaali("a", sana)
 }
 
 case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi VALO
 
   val weakStem = if (g!='X') grammarHelper.gradation(g.toString, s) else sana
-  val a = grammarHelper.vokaali("a", sana)
 
   def taivuta(sijamuoto: Int, plural: Boolean) = {
 
@@ -32,111 +32,74 @@ case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi 
 case class Kotus2(s: String, g: Char) extends Nominal(s,g) {  //KOTUS TYPE PALVELU
 
   val vahva: String = sana
-  val heikko: String = sana
+  val weakStem: String = sana
 
   def taivuta(sijamuoto: Int, plural: Boolean): String = if (!plural) {
-      sijamuoto match {
-        case 1 | 2 => heikko + "n" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
-        case 3 => sana + grammarHelper.vokaali("a", sana)
-        case 4 => heikko + "ss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko + "st" + grammarHelper.vokaali("a", sana)
-        case 6 => sana + sana.last + "n"
-        case 7 => heikko + "ll" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko +  "lt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko + "ll" + "e"
-        case 10 => sana + "n" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "ksi"
-        case _ => sana        // Vï¿½ï¿½rï¿½ indeksi palauttaa nominatiivin
+
+  	  val stem = sijamuoto match {
+        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
+        case _ => sana
       }
+
+      val endings = Vector("", "n", "n", a, "ss"+a, "st"+a, s.last+"n", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
+      stem + endings(sijamuoto)
+
     } else {
-      sijamuoto match {
-        case 2 => sana + "jen"
-        case 3 => sana + "j"+ grammarHelper.vokaali("a", sana)
-        case 4 => heikko + "iss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko + "ist" + grammarHelper.vokaali("a", sana)
-        case 6 => sana + "ihin"
-        case 7 => heikko + "ill" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko +  "ilt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko + "ill" + "e"
-        case 10 => sana + "in" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "iksi"
-        case _ => heikko + "t"
+      val stem = sijamuoto match {
+        case 0 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
+        case _ => sana
       }
+      val endings = Vector("t", "t", "jen", "j"+a, "iss"+a, "ist"+a, "ihin", "ill"+a, "ilt"+a, "ille", "in"+a, "iksi")
+      stem + endings(sijamuoto)
     }
 }
 
 case class Kotus3(s: String, g: Char) extends Nominal(s,g) { //KOTUS TYPE VALTIO
   val vahva: String = s
-  val heikko: String = s
+  val weakStem: String = s
 
   def taivuta(sijamuoto: Int, plural: Boolean): String = if (!plural) {
-      sijamuoto match {
-        case 1 | 2 => heikko + "n" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
-        case 3 => sana + "t" + grammarHelper.vokaali("a", sana)
-        case 4 => heikko + "ss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko + "st" + grammarHelper.vokaali("a", sana)
-        case 6 => sana + sana.last + "n"
-        case 7 => heikko + "ll" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko +  "lt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko + "ll" + "e"
-        case 10 => sana + "n" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "ksi"
-        case _ => sana        // Vï¿½ï¿½rï¿½ indeksi palauttaa nominatiivin
+  	  val stem = sijamuoto match {
+        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
+        case _ => sana
       }
+      val endings = Vector("", "n", "n", "t"+a, "ss"+a, "st"+a, s.last+"n", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
+      stem + endings(sijamuoto)
     } else {
-      sijamuoto match {
-        case 2 => sana + "iden"
-        case 3 => sana + "it"+ grammarHelper.vokaali("a", sana)
-        case 4 => heikko + "iss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko + "ist" + grammarHelper.vokaali("a", sana)
-        case 6 => sana + "ihin"
-        case 7 => heikko + "ill" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko +  "ilt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko + "ill" + "e"
-        case 10 => sana + "in" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "iksi"
-        case _ => heikko + "t"
+      val stem = sijamuoto match {
+        case 0 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
+        case _ => sana
       }
+      val endings = Vector("t", "t", "iden", "it"+a, "iss"+a, "ist"+a, "ihin", "ill"+a, "ilt"+a, "ille", "in"+a, "iksi")
+      stem + endings(sijamuoto)
     }
 }
 
 case class Kotus5(s: String, g: Char) extends Nominal(s,g) {
   // KOTUS #5 tyyppi RISTI
   //sana = takki , heikko = taki
-  val vahva = if ('i' == sana.last) sana else sana + "i"
-
-  val heikko = if (g!='X') grammarHelper.gradation(g.toString, vahva) else s
+  val strongStem = if ('i' == sana.last) sana else sana + "i"
+  val weakStem = if (g!='X') grammarHelper.gradation(g.toString, strongStem) else s
 
   def taivuta(sijamuoto: Int, plural: Boolean) = {
 
     if (!plural) {
-      sijamuoto match {
-        case 1 | 2 => heikko + "n"
-        case 3 => vahva + grammarHelper.vokaali("a", sana)
-        case 4 => heikko + "ss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko + "st" + grammarHelper.vokaali("a", sana)
-        case 6 => vahva + "in"
-        case 7 => heikko + "ll" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko +  "lt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko + "ll" + "e"
-        case 10 => vahva + "n" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "ksi"
-        case _ => s
+      val stem = sijamuoto match {
+        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
+        case _ => sana
       }
+      val endings = Vector("", "n", "n", a, "ss"+a, "st"+a, "in", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
+      stem + endings(sijamuoto)
     } else {
-      sijamuoto match {
-        case 2 => vahva + "en"
-        case 3 => vahva.dropRight(1) + "ej"+ grammarHelper.vokaali("a", sana)
-        case 4 => heikko.dropRight(1) + "eiss" + grammarHelper.vokaali("a", sana)
-        case 5 => heikko.dropRight(1) + "eist" + grammarHelper.vokaali("a", sana)
-        case 6 => sana.dropRight(1) + "eihin"
-        case 7 => heikko.dropRight(1) + "ll" + grammarHelper.vokaali("a", sana)
-        case 8 => heikko.dropRight(1) +  "lt" + grammarHelper.vokaali("a", sana)
-        case 9 => heikko.dropRight(1) + "eill" + "e"
-        case 10 => vahva.dropRight(1) + "in" + grammarHelper.vokaali("a", sana)
-        case 11 => heikko + "eiksi"
-        case _ => heikko + "t"
+      val stem = sijamuoto match {
+        case 4 | 5 | 7 | 8 | 9 | 11 => weakStem.dropRight(1)
+        case 0 | 1 => weakStem
+        case 3 | 10 => strongStem.dropRight(1)
+        case 6 => sana.dropRight(1)
+        case _ => strongStem
       }
+      val endings = Vector("t", "t", "en", "ej"+a, "eiss"+a, "eist"+a, "eihin", "eill"+a, "eilt"+a, "eille", "ein"+a, "eiksi")
+      stem + endings(sijamuoto)
     }
   }
 }
