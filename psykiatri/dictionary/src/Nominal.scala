@@ -48,7 +48,6 @@ case class Kotus2(s: String, g: Char) extends Nominal(s,g) {  //KOTUS TYPE PALVE
   val palvelu: String = sana
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
-  	if (!plural) {
       nominalCase match {
         case 1 | 2 => palvelu+"n" // gen. ja akk. ovat samat. 
         case 3 => palvelu+a
@@ -83,7 +82,6 @@ case class Kotus3(s: String, g: Char) extends Nominal(s,g) { //KOTUS TYPE VALTIO
   val valtio: String = s
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
-    if (!plural) {
       nominalCase match {
         case 1 | 2 => valtio+"n" // gen. ja akk. ovat samat. 
         case 3 => valtio+a
@@ -123,7 +121,6 @@ case class Kotus5(s: String, g: Char) extends Nominal(s,g) {
   val tak = taki.dropRight(1)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
-    if (!plural) {
       nominalCase match {
         case 1 | 2 => taki+"n" // gen. ja akk. ovat samat. 
         case 3 => takki+a
@@ -239,7 +236,7 @@ case class Kotus10(s: String, g: Char) extends Nominal(s,g) {
   val huova = if (g!='X') grammarHelper.gradation(g.toString, s) else s
 
   val huop = huopa.dropRight(1)
-  val huov = huov.dropRight(1)
+  val huov = huova.dropRight(1)
 
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
