@@ -14,30 +14,30 @@ case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi 
     if (!plural) {
       nominalCase match {
         case 1 | 2 => edu + "n" // gen. ja akk. ovat samat. 
-        case 3 => etu + a
-        case 4 => edu + "ss"+a
-        case 5 => edu + "st"+a
-        case 6 => etu + sana.last+"n"
-        case 7 => edu + "ll"+a
-        case 8 => edu +  "lt"+a
-        case 9 => edu + "lle"
-        case 10 => etu + "n"+a
-        case 11 => edu + "ksi"
+        case 3 => etu+a
+        case 4 => edu+"ss"+a
+        case 5 => edu+"st"+a
+        case 6 => etu+sana.last+"n"
+        case 7 => edu+"ll"+a
+        case 8 => edu+"lt"+a
+        case 9 => edu+"lle"
+        case 10 => etu+"n"+a
+        case 11 => edu+"ksi"
         case _ => etu
        }
     } else {
       nominalCase match {
-        case 2 => etu + "jen"
-        case 3 => etu + "j"+a
-        case 4 => edu + "iss"+a
-        case 5 => edu + "ist"+a
-        case 6 => etu + "ihin"
-        case 7 => edu + "ill"+a
-        case 8 => edu +  "ilt"+a
-        case 9 => edu + "ille"
-        case 10 => etu + "in"+a
-        case 11 => edu + "iksi"
-        case _ => edu + "t"
+        case 2 => etu+"jen"
+        case 3 => etu+"j"+a
+        case 4 => edu+"iss"+a
+        case 5 => edu+"ist"+a
+        case 6 => etu+"ihin"
+        case 7 => edu+"ill"+a
+        case 8 => edu+"ilt"+a
+        case 9 => edu+"ille"
+        case 10 => etu+"in"+a
+        case 11 => edu+"iksi"
+        case _ => edu+"t"
        }
     }
   }
@@ -45,75 +45,113 @@ case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi 
 
 case class Kotus2(s: String, g: Char) extends Nominal(s,g) {  //KOTUS TYPE PALVELU
 
-  val vahva: String = sana
-  val weakStem: String = sana
+  val palvelu: String = sana
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
-  	  val stem = nominalCase match {
-        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
-        case _ => sana
-      }
-      val endings = Vector("", "n", "n", a, "ss"+a, "st"+a, s.last+"n", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
-      stem + endings(nominalCase)
-
+  	if (!plural) {
+      nominalCase match {
+        case 1 | 2 => palvelu + "n" // gen. ja akk. ovat samat. 
+        case 3 => palvelu+a
+        case 4 => palvelu+"ss"+a
+        case 5 => palvelu+"st"+a
+        case 6 => palvelu+sana.last+"n"
+        case 7 => palvelu+"ll"+a
+        case 8 => palvelu+"lt"+a
+        case 9 => palvelu+"lle"
+        case 10 => palvelu+"n"+a
+        case 11 => palvelu+"ksi"
+        case _ => palvelu
+       }
     } else {
-      val stem = nominalCase match {
-        case 0 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
-        case _ => sana
-      }
-      val endings = Vector("t", "t", "jen", "j"+a, "iss"+a, "ist"+a, "ihin", "ill"+a, "ilt"+a, "ille", "in"+a, "iksi")
-      stem + endings(nominalCase)
+      nominalCase match {
+        case 2 => palvelu+"jen"
+        case 3 => palvelu+"j"+a
+        case 4 => palvelu+"iss"+a
+        case 5 => palvelu+"ist"+a
+        case 6 => palvelu+"ihin"
+        case 7 => palvelu+"ill"+a
+        case 8 => palvelu+"ilt"+a
+        case 9 => palvelu+"ille"
+        case 10 => palvelu+"in"+a
+        case 11 => palvelu+"iksi"
+        case _ => palvelu+"t"
+       }
     }
 }
 
 case class Kotus3(s: String, g: Char) extends Nominal(s,g) { //KOTUS TYPE VALTIO
-  val vahva: String = s
-  val weakStem: String = s
+  val valtio: String = s
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
-  	  val stem = nominalCase match {
-        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
-        case _ => sana
-      }
-      val endings = Vector("", "n", "n", "t"+a, "ss"+a, "st"+a, s.last+"n", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
-      stem + endings(nominalCase)
+    if (!plural) {
+      nominalCase match {
+        case 1 | 2 => valtio + "n" // gen. ja akk. ovat samat. 
+        case 3 => valtio+a
+        case 4 => valtio+"ss"+a
+        case 5 => valtio+"st"+a
+        case 6 => valtio+sana.last+"n"
+        case 7 => valtio+"ll"+a
+        case 8 => valtio+"lt"+a
+        case 9 => valtio+"lle"
+        case 10 => valtio+"n"+a
+        case 11 => valtio+"ksi"
+        case _ => valtio
+       }
     } else {
-      val stem = nominalCase match {
-        case 0 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
-        case _ => sana
-      }
-      val endings = Vector("t", "t", "iden", "it"+a, "iss"+a, "ist"+a, "ihin", "ill"+a, "ilt"+a, "ille", "in"+a, "iksi")
-      stem + endings(nominalCase)
+      nominalCase match {
+        case 2 => valtio+"iden"
+        case 3 => valtio+"ita"+a
+        case 4 => valtio+"iss"+a
+        case 5 => valtio+"ist"+a
+        case 6 => valtio+"ihin"
+        case 7 => valtio+"ill"+a
+        case 8 => valtio+"ilt"+a
+        case 9 => valtio+"ille"
+        case 10 => valtio+"in"+a
+        case 11 => valtio+"iksi"
+        case _ => valtio+"t"
+       }
     }
 }
 
 case class Kotus5(s: String, g: Char) extends Nominal(s,g) {
   // KOTUS #5 tyyppi RISTI
   //sana = takki , heikko = taki
-  val strongStem = if ('i' == sana.last) sana else sana + "i"
-  val weakStem = if (g!='X') grammarHelper.gradation(g.toString, strongStem) else s
+  val takk = sana.dropRight(1)
+  val takki = if ('i' == sana.last) sana else sana + "i"
+  val taki = if (g!='X') grammarHelper.gradation(g.toString, takki) else s
+  val tak = taki.dropRight(1)
 
-  def taivuta(nominalCase: Int, plural: Boolean) = {
-
+  def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
     if (!plural) {
-      val stem = nominalCase match {
-        case 1 | 2 | 4 | 5 | 7 | 8 | 9 | 11 => weakStem
-        case _ => sana
-      }
-      val endings = Vector("", "n", "n", a, "ss"+a, "st"+a, "in", "ll"+a, "lt"+a, "lle", "n"+a, "ksi")
-      stem + endings(nominalCase)
+      nominalCase match {
+        case 1 | 2 => taki + "n" // gen. ja akk. ovat samat. 
+        case 3 => takki+a
+        case 4 => taki+"ss"+a
+        case 5 => taki+"st"+a
+        case 6 => takki+sana.last+"n"
+        case 7 => taki+"ll"+a
+        case 8 => taki+"lt"+a
+        case 9 => taki+"lle"
+        case 10 => takki+"n"+a
+        case 11 => taki+"ksi"
+        case _ => takki
+       }
     } else {
-      val stem = nominalCase match {
-        case 4 | 5 | 7 | 8 | 9 | 11 => weakStem.dropRight(1)
-        case 0 | 1 => weakStem
-        case 3 | 10 => strongStem.dropRight(1)
-        case 6 => sana.dropRight(1)
-        case _ => strongStem
-      }
-      val endings = Vector("t", "t", "en", "ej"+a, "eiss"+a, "eist"+a, "eihin", "eill"+a, "eilt"+a, "eille", "ein"+a, "eiksi")
-      stem + endings(nominalCase)
+      nominalCase match {
+        case 2 => takki+"ien"
+        case 3 => takk+"ej"+a
+        case 4 => tak+"eiss"+a
+        case 5 => tak+"eist"+a
+        case 6 => takk+"eihin"
+        case 7 => tak+"eill"+a
+        case 8 => tak+"eilt"+a
+        case 9 => tak+"eille"
+        case 10 => takk+"ein"+a
+        case 11 => tak+"eiksi"
+        case _ => taki+"t"
+       }
     }
-  }
 }
 
 case class Kotus6(s: String, g: Char) extends Nominal(s,g) {  // KOTUS TYPE PAPERI
@@ -207,14 +245,14 @@ case class Kotus10(s: String, g: Char) extends Nominal(s,g) {
 
     if (!plural) {
       nominalCase match {
-        case 1 | 2 => heikko + "n" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
+        case 1 | 2 => huova + "n" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
         case 3 => huopa +a
         case 4 => huova + "ss"+a
         case 5 => huova + "st"+a
         case 6 => huopa + huopa.last + "n"
         case 7 => huova + "ll"+a
         case 8 => huova +  "lt"+a
-        case 9 => huova + "ll" + "e"
+        case 9 => huova + "lle"
         case 10 => huopa + "n"+a
         case 11 => huova + "ksi"
         case _ => huopa        // Vï¿½ï¿½rï¿½ indeksi palauttaa nominatiivin
@@ -400,7 +438,7 @@ case class Kotus48(s: String, g: Char) extends Nominal(s,g) {
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {
-        case 1 | 2 => laitte + "en" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
+        case 1 | 2 => laitte + "en" // gen. ja akk. ovat samat. Käytännössä kaikissa näin.
         case 3 => laite + "tt"+a
         case 4 => laitte + "ess"+a
         case 5 => laitte + "est"+a
@@ -410,7 +448,7 @@ case class Kotus48(s: String, g: Char) extends Nominal(s,g) {
         case 9 => laitte + "elle"
         case 10 => laitte + "en"+a
         case 11 => laitte + "eksi"
-        case _ => laite        // Vï¿½ï¿½rï¿½ indeksi palauttaa nominatiivin
+        case _ => laite        // Väärä indeksi palauttaa nominatiivin
       }
     } else {
       nominalCase match {
