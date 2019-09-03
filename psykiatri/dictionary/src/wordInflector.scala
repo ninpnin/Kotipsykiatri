@@ -78,20 +78,20 @@ object wordInflector {
     val g = tiedot(1)
     if (sanaluokka == 0 || sanaluokka >= 99)
       s //Ei taivutusta
-    else if (sanaluokka>=1 && sanaluokka <=51)  // nominal
+    else if (sanaluokka>=1 && sanaluokka <= 51)  // nominal
       sanaluokka match {
-        case 1 => Kotus1(s,g).taivuta( muoto%20, muoto>=20)
-        case 2 => Kotus2(s,g).taivuta( muoto%20, muoto>=20)
-        case 3 => Kotus3(s,g).taivuta( muoto%20, muoto>=20)
-        case 5 => Kotus5(s,g).taivuta( muoto%20, muoto>=20)
-        case 6 => Kotus6(s,g).taivuta( muoto%20, muoto>=20)
-        case 9 => Kotus9(s,g).taivuta( muoto%20, muoto>=20)
-        case 10 | 11 => Kotus10(s,g).taivuta( muoto%20, muoto>=20)
-        case 12 => Kotus12(s,g).taivuta( muoto%20, muoto>=20)
-        case 38 => Kotus38(s,g).taivuta( muoto%20, muoto>=20)
-        case 39 | 40 => Kotus39(s,g).taivuta( muoto%20, muoto>=20)
-        case 48 => Kotus48(s,g).taivuta( muoto%20, muoto>=20)
-        case _ => Kotus1(s,g).taivuta( muoto%20, muoto>=20)
+        case 1 => Kotus1(s,g).inflect(muoto)
+        case 2 => Kotus2(s,g).inflect(muoto)
+        case 3 => Kotus3(s,g).inflect(muoto)
+        case 5 => Kotus5(s,g).inflect(muoto)
+        case 6 => Kotus6(s,g).inflect(muoto)
+        case 9 => Kotus9(s,g).inflect(muoto)
+        case 10 | 11 => Kotus10(s,g).inflect(muoto)
+        case 12 => Kotus12(s,g).inflect(muoto)
+        case 38 => Kotus38(s,g).inflect(muoto)
+        case 39 | 40 => Kotus39(s,g).inflect(muoto)
+        case 48 => Kotus48(s,g).inflect(muoto)
+        case _ => Kotus1(s,g).inflect(muoto)
       }
     else                                   // verb
       sanaluokka match {

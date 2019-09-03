@@ -1,6 +1,7 @@
 package dictionary
 
 abstract class Nominal(val sana: String, astevaihtelu: Char) {
+    def inflect(form: Int) = this.taivuta(form % 20, form >= 20)
     def taivuta(nominalCase: Int, plural: Boolean): String
     val a = grammarHelper.vokaali("a", sana)
 }
