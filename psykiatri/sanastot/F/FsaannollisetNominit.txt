@@ -169,7 +169,7 @@ filmaattisuusSX40
 filmatisointiSJ05
 filmausSX39
 filmiSX05
-filminnösSX39
+filminnÃ¶sSX39
 filmografiaSX12
 filologiSX05
 filologiaSX12
@@ -331,7 +331,7 @@ frigidiysSX40
 friikkiSA05
 friisiSX05
 friisiSX05
-friisiläinenAX38
+friisilÃ¤inenAX38
 frikadelliSX05
 frisbeeSX18
 frisyyriSX06
@@ -391,7 +391,7 @@ fytonomiSX05
 fyysikkoSA04
 fyysinenAX38
 fyysisyysSX40
-fääriSX05
-förskottiSC05
-föönausSX39
-fööniSX05
+fÃ¤Ã¤riSX05
+fÃ¶rskottiSC05
+fÃ¶Ã¶nausSX39
+fÃ¶Ã¶niSX05

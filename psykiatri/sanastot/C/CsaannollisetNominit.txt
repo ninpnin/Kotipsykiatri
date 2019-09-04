@@ -22,7 +22,7 @@ charmiSX05
 charmikasAA41
 charterlentoSJ01
 chateaubriandSX05
-châteauviiniSX05
+chÃ¢teauviiniSX05
 chattiSC05
 cheddarSX05
 cheerleaderSX05
@@ -48,12 +48,12 @@ copyrightSX05
 copywriterSX06
 coulombiSX05
 countrySX01
-coupéSX21
+coupÃ©SX21
 couscousSX05
 cowboySX21
 crackSX05
-crème fraîcheSX08
-crêpeSX08
+crÃ¨me fraÃ®cheSX08
+crÃªpeSX08
 crescendoSX01
 croissantSX05
 cum laudeSX08

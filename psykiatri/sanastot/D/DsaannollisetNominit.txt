@@ -15,7 +15,7 @@ dataSX09
 datanomiSX05
 dateerausSX39
 datiiviSX05
-datšaSX09
+datÂšaSX09
 deadlineSX08
 dealerSX06
 debattiSC05
@@ -168,7 +168,7 @@ didaktiikkaSA09
 didaktinenAX38
 dieettiSC05
 dieselSX06
-dieselöintiSJ05
+dieselÃ¶intiSJ05
 dieteetikkoSA04
 dietetiikkaSA09
 differentiaaliSX05
@@ -333,6 +333,6 @@ dynamometriSX05
 dynastiaSX12
 dysfasiaSX12
 dyyniSX05
-donkkiSA05
-dödöSX01
-dösäSX10
+dÂonkkiSA05
+dÃ¶dÃ¶SX01
+dÃ¶sÃ¤SX10

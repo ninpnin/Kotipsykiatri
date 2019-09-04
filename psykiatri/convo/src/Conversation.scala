@@ -9,15 +9,15 @@ class Conversation {
   
   var loytynyt = false
 
-  // Keskustelun kaikki lauseet järjestyksessä.
+  // Keskustelun kaikki lauseet jÃ¤rjestyksessÃ¤.
   // Boolean-arvo kertoo kuka lauseen on sanonut;
-  // käyttäjä true, kone false
+  // kÃ¤yttÃ¤jÃ¤ true, kone false
   private val lauseet = Buffer[(Sentence,Boolean)]()
 
   lazy val aiheTiedosto = "puhujandata/aiheet.txt"
   lazy val mahdollisetAiheet = Source.fromFile("puhujandata/aiheet.txt").getLines().toVector.map(x => x.split(","))
   lazy val aiheet = Buffer[String]()
-  lazy val banni = Vector("olla","ei","asia","voida","tehdä","NONE","mennä","käydä")
+  lazy val banni = Vector("olla","ei","asia","voida","tehdÃ¤","NONE","mennÃ¤","kÃ¤ydÃ¤")
 
 
   //Aloita keskustelu lauseella "Moi, olen Kalle Koneaivo".
@@ -38,7 +38,7 @@ class Conversation {
   }
 
   def appendSentence(s: String, kayttaja: Boolean): Unit = if (s!="") {
-    val tuple = (dictionaryFinder.getSentence(s.replaceAll("[^A-Za-z0-9._,_?_ä_ö_Ä_Ö ]", "")),kayttaja)
+    val tuple = (dictionaryFinder.getSentence(s.replaceAll("[^A-Za-z0-9._,_?_Ã¤_Ã¶_Ã„_Ã– ]", "")),kayttaja)
     this.appendSentence(tuple._1, tuple._2)
     if (kayttaja) {
       if (loytynyt) opiV() else reactionAdder.opiAiheista(tuple._1, this.mahdollisetAiheet)
@@ -56,7 +56,7 @@ class Conversation {
   def newestSentenceTuple: (Sentence,Boolean) = lauseet.last // palauttaa (Lause,Boolean) -tuplen
   
   
-  def opiV(): Unit = {   //kutsutaan Oppija-olion opiVastauksesta-metodia kahdesta viimeisestä lauseesta (ihminen ja kone)
+  def opiV(): Unit = {   //kutsutaan Oppija-olion opiVastauksesta-metodia kahdesta viimeisestÃ¤ lauseesta (ihminen ja kone)
     if (lauseet.size > 3) {
       val index2 = lauseet.lastIndexWhere(x => x._2)
       val index1 = if (!lauseet(index2-1)._2) index2 - 1 else 609

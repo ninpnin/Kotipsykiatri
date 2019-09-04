@@ -149,7 +149,7 @@ afrikkalainenAX38
 afrikkalaisuusSX40
 afroSX01
 aftaSX09
-af‰‰riSX05
+af√§√§riSX05
 agaattiSC05
 agaaveSX08
 agarSX06
@@ -286,7 +286,7 @@ aitioSX03
 aitoamaryllisSX50
 aitosuomalainenSX50
 aitosuomalaisuusSX50
-aitosyˆp‰SX50
+aitosy√∂p√§SX50
 aitotumallinenSX50
 aitousSX40
 aitovieriSX26
@@ -410,7 +410,7 @@ akvaviittiSC05
 alaSX09
 alabasteriSX06
 aladobiSX05
-alaik‰rajaSX09
+alaik√§rajaSX09
 alainenAX38
 alaisuusSX40
 alakkainenAX38
@@ -464,7 +464,7 @@ alhaisuusSX40
 alhoSX01
 alibiSX05
 aliedustettuAC01
-alij‰‰m‰inenAX38
+alij√§√§m√§inenAX38
 alikasvosSX39
 alimmainenAX38
 alinAX36
@@ -595,8 +595,8 @@ amalgaamiSX05
 amanuenssiSX05
 amaryllisSX39
 amatsoniSX05
-amatˆˆriSX05
-amatˆˆriysSX40
+amat√∂√∂riSX05
+amat√∂√∂riysSX40
 ambiofoniaSX12
 ambiofoninenAX38
 ambitioSX03
@@ -930,7 +930,7 @@ arkeologiaSX12
 arkeologinenAX38
 arkiSL07
 arkinenAX38
-arkip‰iv‰isyysSX40
+arkip√§iv√§isyysSX40
 arkistoSX02
 arkistointiSJ05
 arkisuusSX40
@@ -1027,7 +1027,7 @@ arvoitusSX39
 arvokasAA41
 arvokkuusSX40
 arvollinenAX38
-arvomerkint‰inenAX38
+arvomerkint√§inenAX38
 arvontaSJ09
 arvopostiSX05
 arvostelevaAX10
@@ -1038,7 +1038,7 @@ arvostusSX39
 arvotonAC34
 arvottomuusSX40
 arvovaltaisuusSX40
-arvov‰ritteisyysSX40
+arvov√§ritteisyysSX40
 asbestiSX05
 asbestikangasSG41
 asbestoosiSX05
@@ -1047,7 +1047,7 @@ aseellinenAX38
 aseenkantoSJ01
 aseetonAC34
 aseettomuusSX40
-aseistakielt‰ytyminenSX38
+aseistakielt√§ytyminenSX38
 aseistusSX39
 asemaSX10
 asemalaituriSX06
@@ -1140,7 +1140,7 @@ asteriskiSX05
 asteroidiSX05
 astiaSX12
 astiallinenAX38
-astianpesij‰SX12
+astianpesij√§SX12
 astiastoSX01
 astinSX33
 astmaSX09
@@ -1174,7 +1174,7 @@ asunnotonAC34
 asunnottomuusSX40
 asuntoSJ01
 asuntolaSX12
-asuntos‰‰st‰minenSX38
+asuntos√§√§st√§minenSX38
 asusteSX48
 asuttajaSX10
 asutusSX39
@@ -1203,7 +1203,7 @@ atleetikkoSA04
 atleettiSC05
 atleettinenAX38
 atleettisuusSX40
-atmosf‰‰riSX05
+atmosf√§√§riSX05
 atolliSX06
 atomaarinenAX38
 atomiSX06
@@ -1302,8 +1302,8 @@ autonomiaSX12
 autonominenAX38
 autoritaarinenAX38
 autoritaarisuusSX40
-autorit‰‰rinenAX38
-autorit‰‰risyysSX40
+autorit√§√§rinenAX38
+autorit√§√§risyysSX40
 autosomiSX05
 autotermiittiSC05
 autotypiaSX12
@@ -1368,6 +1368,6 @@ avusteSX48
 avustusSX39
 avutonAC34
 avuttomuusSX40
-azerbaidûaniSX06
-azerbaidûanilainenAX38
+azerbaid¬ûaniSX06
+azerbaid¬ûanilainenAX38
 azeriSX06

@@ -1,11 +1,11 @@
-ei,en,et,ei,emme,ette,eivät,ei,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,älä
+ei,en,et,ei,emme,ette,eivÃ¤t,ei,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,NONE,Ã¤lÃ¤
 olla,olen,olet,on,olemme,olette,ovat,ollaan,olin,olit,oli,olimme,olitte,olivat,oltiin,olisin,olisit,olisi,olisimme,olisitte,olisivat,oltaisiin,ole,ollut,olleet,olema
-syödä,syön,syöt,syö,syömme,syötte,syövät,syödään,söin,söit,söi,söimme,söitte,söivät,syötiin
+syÃ¶dÃ¤,syÃ¶n,syÃ¶t,syÃ¶,syÃ¶mme,syÃ¶tte,syÃ¶vÃ¤t,syÃ¶dÃ¤Ã¤n,sÃ¶in,sÃ¶it,sÃ¶i,sÃ¶imme,sÃ¶itte,sÃ¶ivÃ¤t,syÃ¶tiin
 juoda,juon,juot,juo,juomme,juotte,juovat,juodaan,join,joit,joi,joimme,joitte,joivat,juotiin,joisin,joisit,joisi,joisimme,joisitte,joisivat,juotaisiin,juo,juonut
-käydä,käyn,käyt,käy,käymme,käytte,käyvät,käydään,kävin,kävit,kävimme,kävitte,kävivät,käytiin
+kÃ¤ydÃ¤,kÃ¤yn,kÃ¤yt,kÃ¤y,kÃ¤ymme,kÃ¤ytte,kÃ¤yvÃ¤t,kÃ¤ydÃ¤Ã¤n,kÃ¤vin,kÃ¤vit,kÃ¤vimme,kÃ¤vitte,kÃ¤vivÃ¤t,kÃ¤ytiin
 taitaa,taidan,taidat,taitaa,taidamme,taidatte,taitavat,taidetaan,taisin,taisit,taisi,taisimme,taisitte,taisivat,taidettiin,taitaisin,taitaisit,taitaisi,taitaisimme,taitaisitte,taitaisivat,taidettaisiin,taida,taitanut
 tuntea,tunnen,tunnet,tuntee,tunnemme,tunnette,tuntevat,tunnetaan,tunsin,tunsit,tunsivat
-jäädä,jään,jäät,jää,jäämme,jäätte,jäävät
-lähteä,lähden,lähdet,lähtee,lähdemme,lähdette,lähtevät,lähdetään
+jÃ¤Ã¤dÃ¤,jÃ¤Ã¤n,jÃ¤Ã¤t,jÃ¤Ã¤,jÃ¤Ã¤mme,jÃ¤Ã¤tte,jÃ¤Ã¤vÃ¤t
+lÃ¤hteÃ¤,lÃ¤hden,lÃ¤hdet,lÃ¤htee,lÃ¤hdemme,lÃ¤hdette,lÃ¤htevÃ¤t,lÃ¤hdetÃ¤Ã¤n
 saada,saan,saat,saa,saamme,saatte,saavat,saadaan,sain,sait,sai,saimme,saitte,saivat,saatiin,saisin,saisit,saisi,saisimme,saisitte,saisivat,saataisiin,saa,saanut
 haluta,haluan,haluat,haluaa,haluamme,haluatte,haluavat,halutaan,halusin,halusit,halusi,halusimme,halusitte,halusivat,haluttiin,haluaisin,haluaisit,haluaisi,haluaisimme,haluaisitte,haluaisivat,haluttaisiin,halua,halunnut,halunneet,haluama

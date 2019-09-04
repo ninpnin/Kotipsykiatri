@@ -12,8 +12,8 @@ object wordSorter extends App {
     for (i <- 97 until 97+24) {
       buffer += i.toChar
     }
-    buffer += 'ä'
-    buffer += 'ö'
+    buffer += 'Ã¤'
+    buffer += 'Ã¶'
     buffer.toVector
   }
   

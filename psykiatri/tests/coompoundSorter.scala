@@ -6,7 +6,7 @@ import java.io.PrintWriter
 import dictionary.wordInflector
 import utilities.letterCollection
 
-//T‰m‰ tiedosto lajittelee yhdys.txt:n yhdyssanat jokaisen kirjaimen omaan yhdyssanatiedostoon.
+//T√§m√§ tiedosto lajittelee yhdys.txt:n yhdyssanat jokaisen kirjaimen omaan yhdyssanatiedostoon.
 object coompoundSorter extends App {
 
   val aakkoset = letterCollection.aakkoset.map(_.toUpper)
