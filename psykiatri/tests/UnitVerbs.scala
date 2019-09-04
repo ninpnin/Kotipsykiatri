@@ -13,8 +13,8 @@ class UnitVerbs {
   }
   
   @Test def conjugation52a() {
-    val a = new Kotus52("erist‰yty‰",'F')
-    assertEquals("value at (0,0)", "erist‰ydyn", a.taivuta(1))
+    val a = new Kotus52("erist√§yty√§",'F')
+    assertEquals("value at (0,0)", "erist√§ydyn", a.taivuta(1))
   }
   
   @Test def conjugation52b() {
@@ -48,8 +48,8 @@ class UnitVerbs {
   }
   
   @Test def conjugation53f() {
-    val a = new Kotus53("p‰r‰ht‰‰",'F')
-    assertEquals("value at (0,0)", "p‰r‰hti", a.taivuta(10))
+    val a = new Kotus53("p√§r√§ht√§√§",'F')
+    assertEquals("value at (0,0)", "p√§r√§hti", a.taivuta(10))
   }
 
   @Test def conjugation67a() {
@@ -58,7 +58,7 @@ class UnitVerbs {
   }
     
   @Test def conjugation67b() {
-    val a = new Kotus67("menn‰",'X')
+    val a = new Kotus67("menn√§",'X')
     assertEquals("value at (0,0)", "menet", a.taivuta(2))
   }
   

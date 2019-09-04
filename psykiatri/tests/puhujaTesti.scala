@@ -18,9 +18,9 @@ object puhujaTesti extends App {
     
   }
   def t2() = {
-      val read = readLine("lause t‰h‰n : ")
+      val read = readLine("lause t√§h√§n : ")
       val lause = dictionaryFinder.getSentence(read)
-      val ehto = readLine("ehto t‰h‰n : ")
+      val ehto = readLine("ehto t√§h√§n : ")
       println(munPuhuja.rate(lause, ehto))
   }
   

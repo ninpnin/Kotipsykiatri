@@ -8,7 +8,7 @@ object joogo extends App {
   
     val soossit = Source.fromFile("kotus5.txt").getLines().filter( x => x!=null && x != "").toVector
   
-    val range = Range('a','z').toVector.map( x => x.toChar ) :+ 'ä' :+ 'ö'
+    val range = Range('a','z').toVector.map( x => x.toChar ) :+ 'Ã¤' :+ 'Ã¶'
     for (i <- range) {
       val kirjain = i.toString().toUpperCase()
       println(kirjain) 

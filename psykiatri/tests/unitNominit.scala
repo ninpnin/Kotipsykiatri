@@ -40,9 +40,9 @@ class UnitNominals extends FlatSpec {
     val a = Kotus1("arkku",'A')
     assert("arkkuihin" == a.taivuta(6, true))
   }
-  "Risti" should "be risti‰" in {
+  "Risti" should "be risti√§" in {
     val a = Kotus1("risti",'X')
-    assert("risti‰" == a.taivuta(3, false))
+    assert("risti√§" == a.taivuta(3, false))
   }
   "Takki" should "be takit" in {
     val a = Kotus1("takki",'A')
@@ -61,9 +61,9 @@ class UnitNominals extends FlatSpec {
     assert("raudan" == a.taivuta(2, false))
   }
 
-  "El‰m‰" should "be el‰m‰ss‰" in {
-    val a = Kotus10("el‰m‰",'X')
-    assert("el‰m‰ss‰" == a.taivuta(4, false))
+  "El√§m√§" should "be el√§m√§ss√§" in {
+    val a = Kotus10("el√§m√§",'X')
+    assert("el√§m√§ss√§" == a.taivuta(4, false))
   }
 
   "Kulkija" should "be kulkijoita" in {
