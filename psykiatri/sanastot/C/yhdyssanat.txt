@@ -10,7 +10,7 @@ city&kulttuuriSX06
 clearing&kurssiSX05
 cocktail&kirsikkaSA14
 cocktail&lasiSX05
-cocktail&leip‰SE10
+cocktail&leip√§SE10
 cocktail&palaSX09
 cocktail&tikkuSA01
 cocktail&tilaisuusSX40

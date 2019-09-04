@@ -23,7 +23,7 @@ agnostisestiMX99
 ahMX99
 ahaaMX99
 ahdasmielisestiMX99
-ahdasn‰kˆisestiMX99
+ahdasn√§k√∂isestiMX99
 ahdasrajaisestiMX99
 ahdistuneestiMX99
 ahkeraanMX99
@@ -88,7 +88,7 @@ alakantissaMX99
 alakanttiinMX99
 alakkainMX99
 alakuloisestiMX99
-alakynness‰MX99
+alakynness√§MX99
 alakynteenMX99
 alallaanMX99
 alalleenMX99
@@ -130,7 +130,7 @@ alkuaanMX99
 alkuisinMX99
 alkujaanMX99
 alkukantaisestiMX99
-alkuper‰isestiMX99
+alkuper√§isestiMX99
 alkuunMX99
 alkuunkaanMX99
 allaMX99
@@ -153,7 +153,7 @@ alumpanaMX99
 alunMX99
 alun alkaenMX99
 alun perinMX99
-alun pit‰enMX99
+alun pit√§enMX99
 alustavastiMX99
 alusvaatteisillaanMX99
 alusvaatteisilleenMX99
@@ -224,10 +224,10 @@ arvioltaMX99
 arvoituksellisestiMX99
 arvokkaastiMX99
 arvostelevastiMX99
-arvostelukyvyttˆm‰stiMX99
+arvostelukyvytt√∂m√§stiMX99
 arvottomastiMX99
 arvovaltaisestiMX99
-arvov‰ritteisestiMX99
+arvov√§ritteisestiMX99
 asemastaMX99
 asemestaMX99
 asenteellisestiMX99
@@ -254,7 +254,7 @@ auliistiMX99
 aurinkoisestiMX99
 automaattisestiMX99
 autoritaarisestiMX99
-autorit‰‰risestiMX99
+autorit√§√§risestiMX99
 auttamattaMX99
 auttamattomastiMX99
 auttavastiMX99
@@ -266,12 +266,12 @@ avoMX99
 avoimestiMX99
 avojaloinMX99
 avokatseisestiMX99
-avok‰tisestiMX99
+avok√§tisestiMX99
 avomielisestiMX99
 avonaisestiMX99
 avosilminMX99
 avosuinMX99
-avosyd‰misestiMX99
+avosyd√§misestiMX99
 avosylinMX99
 avuliaastiMX99
 avuttomastiMX99

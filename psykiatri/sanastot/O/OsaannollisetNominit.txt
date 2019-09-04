@@ -33,7 +33,7 @@ ohenneSJ48
 ohennusSX39
 ohenteinenAX38
 ohentumaSX10
-ohikiit‰v‰AX10
+ohikiit√§v√§AX10
 ohimoSX02
 ohitteluSX02
 ohitusSX39
@@ -187,12 +187,12 @@ olympialaisetSX38
 olympolainenAX38
 omaAX10
 oma-aloitteisuusSX40
-omael‰m‰kertaSX50
+omael√§m√§kertaSX50
 omaharkintainenSX38
 omahoitajaSX50
 omahoitoSX50
-omahyv‰inenAX38
-omahyv‰isyysSX40
+omahyv√§inenAX38
+omahyv√§isyysSX40
 omailmeinenSX18
 omainenAX38
 omaisuusSX40
@@ -200,10 +200,10 @@ omakehuSX50
 omakustanneSX50
 omakustannuksetSX50
 omaleimaisuusSX40
-omal‰‰k‰riSX50
+omal√§√§k√§riSX50
 omanlainenSX38
 omapainoSX50
-omap‰isyysSX40
+omap√§isyysSX40
 omarahoitusSX50
 omatoimisuusSX40
 omatuntoSX51
@@ -223,7 +223,7 @@ omistajaSX10
 omisteSX48
 omistusSX39
 omistusliitteellinenSX38
-omistusliitteetˆnSC34
+omistusliitteet√∂nSC34
 omistusliitteinenSX38
 omituinenAX38
 omituisuusSX40
@@ -298,7 +298,7 @@ operaatioSX03
 operaattoriSX06
 operatiivinenAX38
 operationaalinenAX38
-operatˆˆriSX05
+operat√∂√∂riSX05
 operettiSC05
 operoijaSX10
 operointiSJ05
@@ -434,7 +434,7 @@ osaaminenSX38
 osakasSA41
 osakeSA48
 osakeantiSJ05
-osakes‰‰st‰minenSX38
+osakes√§√§st√§minenSX38
 osakkeistoSX01
 osakkuusSX40
 osallinenAX38

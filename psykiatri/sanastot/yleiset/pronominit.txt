@@ -1,9 +1,9 @@
-min‰,minut,minun,minua,minussa,minusta,minuun,minulla,minulta,minulle,minuna,minuksi
-sin‰,sinut,sinun,sinua,sinussa,sinusta,sinuun,sinulla,sinulta,sinulle,sinuna,sinuksi
-h‰n,h‰net,h‰nen,h‰nt‰,h‰ness‰,h‰nest‰,h‰neen,h‰nell‰,h‰nelt‰,h‰nelle,h‰nen‰,h‰neksi,he,heid‰t,heid‰n,heit‰,heiss‰,heist‰,heihin,heill‰,heilt‰,heille,hein‰,heiksi
-me,meid‰t,meid‰n,meit‰,meiss‰,meist‰,meihin,meill‰,meilt‰,meille,mein‰,meiksi
-te,teid‰t,teid‰n,teit‰,teiss‰,teist‰,teihin,teill‰,teilt‰,teille,tein‰,teiksi
-t‰m‰,t‰m‰n,t‰m‰n,t‰t‰,t‰ss‰,t‰st‰,t‰h‰n,t‰ll‰,t‰lt‰,t‰lle,t‰n‰,t‰ksi,n‰m‰,n‰m‰,n‰iden,n‰it‰
+min√§,minut,minun,minua,minussa,minusta,minuun,minulla,minulta,minulle,minuna,minuksi
+sin√§,sinut,sinun,sinua,sinussa,sinusta,sinuun,sinulla,sinulta,sinulle,sinuna,sinuksi
+h√§n,h√§net,h√§nen,h√§nt√§,h√§ness√§,h√§nest√§,h√§neen,h√§nell√§,h√§nelt√§,h√§nelle,h√§nen√§,h√§neksi,he,heid√§t,heid√§n,heit√§,heiss√§,heist√§,heihin,heill√§,heilt√§,heille,hein√§,heiksi
+me,meid√§t,meid√§n,meit√§,meiss√§,meist√§,meihin,meill√§,meilt√§,meille,mein√§,meiksi
+te,teid√§t,teid√§n,teit√§,teiss√§,teist√§,teihin,teill√§,teilt√§,teille,tein√§,teiksi
+t√§m√§,t√§m√§n,t√§m√§n,t√§t√§,t√§ss√§,t√§st√§,t√§h√§n,t√§ll√§,t√§lt√§,t√§lle,t√§n√§,t√§ksi,n√§m√§,n√§m√§,n√§iden,n√§it√§
 tuo,tuon,tuon,tuota,tuossa,tuosta,tuohon,tuolla,tuolta,tuolle,tuona,tuoksi,nuo,nuo,noiden
-se,sen,sen,sit‰,siin‰,siit‰,siihen,sill‰,silt‰,sille,sinn‰,siksi,ne,ne,niiden,niit‰,niiss‰,niist‰,niihin,niill‰,niilt‰,niille,niin‰,niiksi
-mik‰,mink‰,mink‰,mit‰,miss‰,mist‰,minne,mill‰,milt‰,mille,min‰,miksi
+se,sen,sen,sit√§,siin√§,siit√§,siihen,sill√§,silt√§,sille,sinn√§,siksi,ne,ne,niiden,niit√§,niiss√§,niist√§,niihin,niill√§,niilt√§,niille,niin√§,niiksi
+mik√§,mink√§,mink√§,mit√§,miss√§,mist√§,minne,mill√§,milt√§,mille,min√§,miksi

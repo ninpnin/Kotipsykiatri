@@ -95,7 +95,7 @@ beagleSX08
 beatSX05
 beaujolaisviiniSX05
 beauty boxSX05
-bÈbÈSX21
+b√©b√©SX21
 bebeeSX20
 bebopSX05
 becquerelSX05
@@ -156,7 +156,7 @@ bimetallismiSX05
 binaarinenAX38
 bingoSX01
 binomiSX05
-bin‰‰rinenAX38
+bin√§√§rinenAX38
 biodiversiteettiSC05
 biodynaaminenAX38
 biodynaamisuusSX40
@@ -171,7 +171,7 @@ biologiaSX12
 biologinenAX38
 biometrinenAX38
 biopsiaSX12
-biosf‰‰riSX05
+biosf√§√§riSX05
 biotooppiSB05
 bisarriAX06
 biseksuaalisuusSX40
@@ -214,11 +214,11 @@ boksiSX05
 boksiSX05
 boleroSX02
 bolsevikkiSA05
-bolöevikkiSA05
+bol¬öevikkiSA05
 bolsevismiSX05
-bolöevismiSX05
+bol¬öevismiSX05
 bolsevistinenAX38
-bolöevistinenAX38
+bol¬öevistinenAX38
 bongariSX06
 bongausSX39
 bongoSX01
@@ -235,7 +235,7 @@ bordelliSX05
 bordyyriSX05
 borrelioosiSX05
 borssiSX05
-borötöSX05
+bor¬öt¬öSX05
 bosniahertsegovinalainenAX38
 bosoniSX06
 bossa novaSX10
@@ -269,19 +269,19 @@ bravuuriSX06
 breikkausSX39
 breikkiSA05
 brenkkuSA01
-breûnevil‰inenAX38
-breûnevil‰isyysSX40
+bre¬ûnevil√§inenAX38
+bre¬ûnevil√§isyysSX40
 bridgeSX08
 brieSX21
-brigadˆˆriSX05
+brigad√∂√∂riSX05
 briiffausSX39
 brikettiSC05
 briljanttiAC05
 briljeerausSX39
 briossiSX05
 brittiSC05
-brittil‰inenAX38
-brittil‰isyysSX40
+brittil√§inenAX38
+brittil√§isyysSX40
 brodeerausSX39
 brodyyriSX05
 brodyyrikangasSG41
@@ -299,8 +299,8 @@ brunssiSX05
 brutaaliAX06
 brutaaliusSX40
 bruttoSC01
-bryss‰SX10
-br‰ndiSX05
+bryss√§SX10
+br√§ndiSX05
 buddhalainenAX38
 buddhalaisuusSX40
 buddhismiSX05
@@ -327,7 +327,7 @@ bunkkeriSX06
 burnoutSX05
 businessSX05
 busmanniSX05
-buömanniSX05
+bu¬ömanniSX05
 bussiSX05
 butaaniSX05
 buuausSX39
@@ -344,6 +344,6 @@ byrokratisointiSJ05
 bysanttilainenAX38
 bysanttilaisuusSX40
 byteSX08
-b‰ndiSX05
-b‰netSX08
-b‰nksSX05
+b√§ndiSX05
+b√§netSX08
+b√§nksSX05

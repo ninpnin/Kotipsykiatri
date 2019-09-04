@@ -36,9 +36,9 @@ gaySX21
 geeliSX05
 geeniSX05
 geenimuokattuAC01
-geenistöSX02
+geenistÃ¶SX02
 geimitSX05
-geišaSX09
+geiÂšaSX09
 geisirSX05
 gelatiiniSX05
 geminaattaSC09
@@ -113,7 +113,7 @@ gluteeniSX05
 gluteenitonAC34
 glyseriiniSX05
 glyseroliSX05
-glögiSX05
+glÃ¶giSX05
 gneissiSX05
 gnostikkoSA04
 gnostilainenAX38
@@ -177,10 +177,10 @@ grillausSX39
 grilliSX05
 grogiSX05
 groteskiAX05
-gruyèreSX08
+gruyÃ¨reSX08
 gryndausSX39
 grynderiSX06
-grönlantiSJ05
+grÃ¶nlantiSJ05
 guanoSX01
 guassiSX05
 guavaSX09
@@ -194,4 +194,4 @@ gynekologiaSX12
 gynekologinenAX38
 gyrokopteriSX06
 gyroskooppiSB05
-gängiSX05
+gÃ¤ngiSX05

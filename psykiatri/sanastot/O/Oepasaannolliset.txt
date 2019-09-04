@@ -10,7 +10,7 @@ ohestaMX99
 ohhohMX99
 ohhoijaaMX99
 ohiMX99
-ohimenev‰stiMX99
+ohimenev√§stiMX99
 ohimennenMX99
 ohitseMX99
 ohjelmallisestiMX99
@@ -35,12 +35,12 @@ oikeassaMX99
 oikeastaanMX99
 oikeastiMX99
 oikeinMX99
-oikein p‰inMX99
+oikein p√§inMX99
 oikeudellisestiMX99
 oikeudettomastiMX99
 oikeutetustiMX99
 oikoisenaanMX99
-oikop‰‰t‰MX99
+oikop√§√§t√§MX99
 oikukkaastiMX99
 oikullisestiMX99
 oitisMX99
@@ -63,13 +63,13 @@ olletikaanMX99
 olletikinMX99
 oma-aloitteisestiMX99
 omaehtoisestiMX99
-omahyv‰isestiMX99
+omahyv√§isestiMX99
 omakohtaisestiMX99
 omakuvaSX5150
-omak‰tisestiMX99
+omak√§tisestiMX99
 omalaatuisestiMX99
-omaper‰isestiMX99
-omap‰isestiMX99
+omaper√§isestiMX99
+omap√§isestiMX99
 omatoimisestiMX99
 omavaltaisestiMX99
 omavastuisestiMX99
@@ -104,7 +104,7 @@ osaaottavastiMX99
 osakseenMX99
 osaksiMX99
 osapuilleenMX99
-osap‰iv‰toimisestiMX99
+osap√§iv√§toimisestiMX99
 osinMX99
 osittainMX99
 osuvastiMX99

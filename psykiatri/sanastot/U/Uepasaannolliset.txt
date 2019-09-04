@@ -4,7 +4,7 @@ uhkaavastiMX99
 uhkeastiMX99
 uhmakkaastiMX99
 uhmamielisestiMX99
-uhmap‰isestiMX99
+uhmap√§isestiMX99
 uhrautuvastiMX99
 uimapukusillaanMX99
 uimapukusilleenMX99
@@ -44,8 +44,8 @@ ummessaMX99
 ummetMX99
 umpeenMX99
 umpimielisestiMX99
-umpim‰hk‰isestiMX99
-umpim‰hk‰‰nMX99
+umpim√§hk√§isestiMX99
+umpim√§hk√§√§nMX99
 umpinaisestiMX99
 umpisukkeloonMX99
 umpisukkelossaMX99

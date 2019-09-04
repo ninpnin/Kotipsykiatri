@@ -22,7 +22,7 @@ uhmainenAX38
 uhmaisaAX10
 uhmakasAA41
 uhmakkuusSX40
-uhmap‰isyysSX40
+uhmap√§isyysSX40
 uhoSX01
 uhrausSX39
 uhrautuvaAX10
@@ -99,7 +99,7 @@ ulommainenAX38
 ulompiAH16
 ulonnusSX39
 ulosantiSJ05
-ulosl‰mpi‰v‰SX10
+ulosl√§mpi√§v√§SX10
 ulosteSX48
 ulostusSX39
 ulotteikasAA41
@@ -119,8 +119,8 @@ ummikkoSA04
 umpiSH07
 umpieritteinenAX38
 umpikuuroAX01
-umpim‰hk‰inenAX38
-umpim‰hk‰isyysSX40
+umpim√§hk√§inenAX38
+umpim√§hk√§isyysSX40
 umpinainenAX38
 umpinaisuusSX40
 umpioSX03
