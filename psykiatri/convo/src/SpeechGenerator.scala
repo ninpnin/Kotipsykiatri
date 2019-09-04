@@ -40,7 +40,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
         if (newSentence.isEmpty)
           newSentence = createCausalitySentence("puhujandata/causalities.txt", lastSentence)
         this.state = 0
-        //Jos ei kausaliteettia, luo aihelause todennäköisyydellä 0.6
+        //Jos ei kausaliteettia, luo aihelause todennÃ¤kÃ¶isyydellÃ¤ 0.6
         if (newSentence.isEmpty && lottery(0.6))
           newSentence = aihevastaus("puhujandata/lauseet.txt")
 
@@ -76,7 +76,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     sentenceFromConditions(causalities, sentence)
   }
 
-  private def lause3(tiedosto: String,l: Sentence) = {  // filteröi muut kuin kysymykseen vastaukset
+  private def lause3(tiedosto: String,l: Sentence) = {  // filterÃ¶i muut kuin kysymykseen vastaukset
     val vektori = ( Source.fromFile(tiedosto).getLines()++Source.fromFile("puhujandata/aihiot1.txt").getLines() ).filter(x => x!="" && x.split("->")(0).contains("Kysymysmerkki")).toVector
     println("vektori.size : " + vektori.size)
     sentenceFromConditions(vektori,l)
@@ -130,7 +130,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
           } else t = currentSize
           if ( (t>= currentSize -1 && currentSize >1 ) || t >= currentSize) {
             bufferi += rivi
-            if (debugging) { println("Löydettiin sopiva ehto", rivi) }
+            if (debugging) { println("LÃ¶ydettiin sopiva ehto", rivi) }
           }
         }
       }
@@ -194,7 +194,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     val s1 = split(1)
     val lsanat = l.wordList
 
-    if (!s1.contains("{")) {  // muotoa minä&ostin&jäätelön
+    if (!s1.contains("{")) {  // muotoa minÃ¤&ostin&jÃ¤Ã¤telÃ¶n
       for (i<- s1.split("&")) {
         if (i.startsWith("(")) {
           val j = i.substring(2, i.size-1).split(",")
@@ -235,7 +235,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
           sanat += getWord(i)
         }
       }
-    } else {  // muotoa 0xxx8xxx1xxx{minä,ostaa,jäätelö}
+    } else {  // muotoa 0xxx8xxx1xxx{minÃ¤,ostaa,jÃ¤Ã¤telÃ¶}
 
       val koodit0 = s0.take(s0.indexOf("{")).grouped(4).toVector.map { x => encoder.decode(x) }
       val sa0 = s0.drop(s0.indexOf("{")+1).dropRight(1).split(",")
@@ -267,7 +267,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
             sanat += new Word(i._1,i._2)
       }
     }
-    if (debugging) {println("Käytettiin ehtoa : " + s0); println("Sopivuus : " +rate(l,s0))}
+    if (debugging) {println("KÃ¤ytettiin ehtoa : " + s0); println("Sopivuus : " +rate(l,s0))}
     new Sentence(sanat)
   }
 
@@ -275,7 +275,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
   def checkF(t: String): Boolean = if (t.size == 2) {  //tarkistaa formaatin
     if (('0' to '9').contains(t(1))) true else false  // (yleistetty ehto)
   } else false                                        // esim auto on "S1" koska se on substantiivi
-                                                      // numero erottaa yleistettävät sanat toisistaan
+                                                      // numero erottaa yleistettÃ¤vÃ¤t sanat toisistaan
 
   def matchTime(l: Sentence): Int = {
     var a = 1
@@ -293,7 +293,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     keskustelu.newestSentenceTuple._1
       .wordList
       .map(n=> n.sanaluokka)
-      .count(x=> x == Some(x)) // sisältää sanaluokan X
+      .count(x=> x == Some(x)) // sisÃ¤ltÃ¤Ã¤ sanaluokan X
   private def PMX(x: String) = keskustelu.newestSentenceTuple._1.wordList.map(n => n.perusmuoto).count(x=> x ==Some(x))
   private def sisPMX(x: String) = PMX(x) >=1
 
@@ -311,7 +311,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     val a = s.split("+").map(x=> o(x)).toBuffer
   }
 
-  def checkState(): Unit = {    // tarkistaa keskustelun perusteella mikä tila on
+  def checkState(): Unit = {    // tarkistaa keskustelun perusteella mikÃ¤ tila on
     if (this.state==0) {
       val uusin = keskustelu.newestSentenceTuple
       if (uusin._2) {
@@ -345,7 +345,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
           case 2 | 9 | 16 => "et"
           case 4 | 11 | 18 => "emme"
           case 5 | 12 | 19 => "ette"
-          case 6 | 13 | 20 => "eivät"
+          case 6 | 13 | 20 => "eivÃ¤t"
           case _ => "ei"
         }
 
@@ -375,13 +375,13 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
       for (i <- rivizip)
         sanat += new Word(i._2,simpleDecode(i._1))
 
-      if (debugging) println("Löydettiin yhteisiä aiheita : " + topics)
+      if (debugging) println("LÃ¶ydettiin yhteisiÃ¤ aiheita : " + topics)
       Some( new Sentence(sanat) )
     } else None
   }
 
   private def yleisvastaus(tiedosto: String): Sentence = {  // geneerinen vastaus
-    if (debugging) println("Ei löytynyt sopivia ehtoja. Arvottiin yleisvastaus.")
+    if (debugging) println("Ei lÃ¶ytynyt sopivia ehtoja. Arvottiin yleisvastaus.")
     val soos = Source.fromFile(tiedosto).getLines.toVector
     val rivi = soos(rng.nextInt(soos.size))
     dictionaryFinder.getSentence(rivi)

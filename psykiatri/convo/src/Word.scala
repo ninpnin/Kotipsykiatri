@@ -5,8 +5,8 @@ import dictionary.wordInflector
 class Word(text: String) {
 
   var sanaluokka: Option[String] = None      // None tarkoittaa, ettei muuttujan arvoa
-  var perusmuoto: Option[String] = None      // voi viel‰ p‰‰tell‰. Esim sanaluokkaa ei
-  var taivutusmuoto: Option[Int] = None      // tiedet‰.
+  var perusmuoto: Option[String] = None      // voi viel√§ p√§√§tell√§. Esim sanaluokkaa ei
+  var taivutusmuoto: Option[Int] = None      // tiedet√§.
   var suffix: Option[String] = None
 
   if (text == "?") perusmuoto = Some("Kysymysmerkki") else if (text==",") perusmuoto = Some("Pilkku")

@@ -6,7 +6,7 @@ import java.io.PrintWriter
 
 object reactionAdder {
 
-  //N‰ytet‰‰nkˆ debuggausviestit konsolissa sit‰ mukaa kun
+  //N√§ytet√§√§nk√∂ debuggausviestit konsolissa sit√§ mukaa kun
   //ohjelma luo lauseita ja tallentaa asioita tiedostoihin
   var debuggaus = false
   
@@ -18,20 +18,20 @@ object reactionAdder {
   private val soossit2 = Source.fromFile(filepath2).getLines().toBuffer
   private val soossit3 = Source.fromFile(filepath3).getLines().toBuffer
 
-  //Lis‰‰ kausaliteetti tiedostoon
+  //Lis√§√§ kausaliteetti tiedostoon
   def addCausality(s: String): Unit = {
     if (s.nonEmpty) {
       if (debuggaus)
-        println("Lis‰ttiin kausaliteetti : " + s)
+        println("Lis√§ttiin kausaliteetti : " + s)
       soossit1 += s
       this.printInFile1()
     }
   }
 
-  //Lis‰‰ assosiaatio tiedostoon
+  //Lis√§√§ assosiaatio tiedostoon
   def addAssociation(s: String): Unit = {
     if (s.nonEmpty) {
-      if (debuggaus) println("Lis‰ttiin assosiaatio : " + s)
+      if (debuggaus) println("Lis√§ttiin assosiaatio : " + s)
       soossit2 += s
       this.printInFile2()
     }
@@ -44,14 +44,14 @@ object reactionAdder {
       if (rivienMaara > 1) {
           val rivi = formaatti(l)
           soossit3 += rivi
-          if (debuggaus) println("Lis‰tty aihelause : " + rivi)
+          if (debuggaus) println("Lis√§tty aihelause : " + rivi)
       }
     }
     this.printInFile3()
   }
 
 
-  // *EI KƒYTETƒ OHJELMASSA
+  // *EI K√ÑYTET√Ñ OHJELMASSA
 
   def opiVastauksesta(l1: Sentence, l2: Sentence): String = {
     var counter = 0
@@ -61,7 +61,7 @@ object reactionAdder {
     val sanat1 = klooni1.wordList
     val sanat2 = klooni2.wordList
     val pm2 = sanat2.map( x => x.perusmuoto.getOrElse(x.teksti) )
-    val causality1 = causality(klooni1,klooni2)  // yksitt‰inen
+    val causality1 = causality(klooni1,klooni2)  // yksitt√§inen
     for (i<- sanat1) {
       val i1 = i.perusmuoto.getOrElse(i.teksti)
       if (pm2.contains(i1) && !i.sanaluokka.contains("verbi") && i.sanaluokka.isDefined) {
@@ -97,7 +97,7 @@ object reactionAdder {
   // luo formaatin mukaisen kausaliteetin kahdesta lauseesta
   def causality(l1: Sentence, l2: Sentence): String = formaatti(l1) + "->" + formaatti(l2)
 
-  private def formaatti(l: Sentence) : String = { // luo formaatin mukaisen kausaliteetin yhdest‰ lauseesta
+  private def formaatti(l: Sentence) : String = { // luo formaatin mukaisen kausaliteetin yhdest√§ lauseesta
     val wordList = l.wordList
 
     def inflectionCode(word: Word) = {
@@ -110,7 +110,7 @@ object reactionAdder {
 
     def textify(s: Word) = s.perusmuoto.getOrElse(s.teksti)
     val infinitives = wordList.map(textify(_)).reduceLeft(_ + "," + _)
-    inflections + "{" + infinitives + "}" // 8xxx0xxx + { + menn‰,sinne + }
+    inflections + "{" + infinitives + "}" // 8xxx0xxx + { + menn√§,sinne + }
   }
 
   private def viittaus(l: Sentence, sana: Word) = {    // SE
@@ -135,10 +135,10 @@ object reactionAdder {
     if (topics.nonEmpty) addAssociation(topics)
   }
 
-  // yleisluontoisia sanoja jotka eiv‰t liity aiheina mihink‰‰n, joten ne sivuutetaan
-  val banni = Vector("olla","ei","asia","voida","tehd‰","menn‰","k‰yd‰",
-      "tuoda","jaksaa","muistaa","pysty‰","haluta","itse", "oppia", "saada",
-      "asia", "tulla", "tyk‰t‰", "pit‰‰", "taitaa", "k‰ytt‰‰", "osata", "hyv‰",
+  // yleisluontoisia sanoja jotka eiv√§t liity aiheina mihink√§√§n, joten ne sivuutetaan
+  val banni = Vector("olla","ei","asia","voida","tehd√§","menn√§","k√§yd√§",
+      "tuoda","jaksaa","muistaa","pysty√§","haluta","itse", "oppia", "saada",
+      "asia", "tulla", "tyk√§t√§", "pit√§√§", "taitaa", "k√§ytt√§√§", "osata", "hyv√§",
       "kuulua", "ottaa"
   )
 
@@ -154,7 +154,7 @@ object reactionAdder {
     else ""
   }
 
-  //Funktiot puhujandatan (sis‰lt‰en uudet ehdot) tulostamiseksi uudestaan tiedostoon
+  //Funktiot puhujandatan (sis√§lt√§en uudet ehdot) tulostamiseksi uudestaan tiedostoon
   private def printInFile1() = {
     val printteri1 = new PrintWriter(filepath1)
     try
