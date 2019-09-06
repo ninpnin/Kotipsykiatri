@@ -1,4 +1,9 @@
-talvi,tulo
-sohva,istuskella
-tee,itsemurha
-vappu,viettää,huvittaa
+kalle,kysyä
+aurinko,paistaa
+elämä,elämä
+leuka,rinta,pettymys,uusia
+kuunnella,ajaa
+uusinta,levy
+vala,vala
+rasta,äijä
+liittyä,seurata

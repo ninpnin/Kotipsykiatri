@@ -3,6 +3,8 @@ package convo
 import scala.io.Source
 import dictionary.encoder
 import java.io.PrintWriter
+import dictionary.{Word, Sentence}
+import utilities.Config.vocabPath
 
 object reactionAdder {
 
@@ -10,9 +12,9 @@ object reactionAdder {
   //ohjelma luo lauseita ja tallentaa asioita tiedostoihin
   var debuggaus = false
   
-  val filepath1 = "startingFiles/causalities.txt"
-  val filepath2 = "startingFiles/association.txt"
-  val filepath3 = "startingFiles/sentences.txt"
+  val filepath1 = vocabPath + "startingFiles/causalities.txt"
+  val filepath2 = vocabPath + "startingFiles/association.txt"
+  val filepath3 = vocabPath + "startingFiles/sentences.txt"
 
   private val soossit1 = Source.fromFile(filepath1).getLines().toBuffer
   private val soossit2 = Source.fromFile(filepath2).getLines().toBuffer

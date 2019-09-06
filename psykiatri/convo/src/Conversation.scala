@@ -2,8 +2,9 @@ package convo
 
 import scala.collection.mutable.Buffer
 import scala.io.Source
-import dictionary.dictionaryFinder
+import dictionary.{Word, Sentence, dictionaryFinder}
 import utilities.rng.lottery
+import utilities.Config.vocabPath
 
 class Conversation {
   
@@ -14,8 +15,8 @@ class Conversation {
   // käyttäjä true, kone false
   private val lauseet = Buffer[(Sentence,Boolean)]()
 
-  lazy val aiheTiedosto = "puhujandata/aiheet.txt"
-  lazy val mahdollisetAiheet = Source.fromFile("puhujandata/aiheet.txt").getLines().toVector.map(x => x.split(","))
+  lazy val aiheTiedosto = vocabPath + "puhujandata/aiheet.txt"
+  lazy val mahdollisetAiheet = Source.fromFile(aiheTiedosto).getLines().toVector.map(x => x.split(","))
   lazy val aiheet = Buffer[String]()
   lazy val banni = Vector("olla","ei","asia","voida","tehdä","NONE","mennä","käydä")
 

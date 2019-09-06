@@ -6,9 +6,11 @@ import dictionary.dictionaryFinder._
 import dictionary.encoder.{simpleDecode,decode}
 import dictionary.dictionaryFinder
 import dictionary.encoder
+import dictionary.{Word, Sentence}
 
 import utilities.rng
 import utilities.rng.lottery
+import utilities.Config.vocabPath
 
 class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskustelu: Conversation) {
   
@@ -36,33 +38,33 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     this.state match {
       case 1 => {
         //Luo kausaliteettilause jos mahdollista
-        var newSentence = createCausalitySentence("puhujandata/aihiot1.txt", lastSentence)
+        var newSentence = createCausalitySentence(vocabPath + "puhujandata/aihiot1.txt", lastSentence)
         if (newSentence.isEmpty)
-          newSentence = createCausalitySentence("puhujandata/causalities.txt", lastSentence)
+          newSentence = createCausalitySentence(vocabPath + "puhujandata/causalities.txt", lastSentence)
         this.state = 0
         //Jos ei kausaliteettia, luo aihelause todennäköisyydellä 0.6
         if (newSentence.isEmpty && lottery(0.6))
-          newSentence = aihevastaus("puhujandata/lauseet.txt")
+          newSentence = aihevastaus(vocabPath + "puhujandata/lauseet.txt")
 
         keskustelu.loytynyt = newSentence.isDefined
         if (newSentence.isDefined) {
           newSentence
         } else {
           this.state = 2
-          Some(this.yleisvastaus("puhujandata/yleisvastaukset.txt"))
+          Some(this.yleisvastaus(vocabPath + "puhujandata/yleisvastaukset.txt"))
         }
       }
       case 2 => {
         this.state = 0
-        val reply = aihevastaus("puhujandata/lauseet.txt")
+        val reply = aihevastaus(vocabPath + "puhujandata/lauseet.txt")
         keskustelu.loytynyt = reply.isDefined
         reply
       }
       case 3 => {
         this.state = 0
-        val non = lause3("puhujandata/causalities.txt", lastSentence)
+        val non = lause3(vocabPath + "puhujandata/causalities.txt", lastSentence)
         keskustelu.loytynyt = non.isDefined
-        if (non.isEmpty) Some(yleisvastaus("puhujandata/yleiskvastaukset.txt")) else non
+        if (non.isEmpty) Some(yleisvastaus(vocabPath + "puhujandata/yleiskvastaukset.txt")) else non
       }
       case _ => None
     }
@@ -77,7 +79,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
   }
 
   private def lause3(tiedosto: String,l: Sentence) = {  // filteröi muut kuin kysymykseen vastaukset
-    val vektori = ( Source.fromFile(tiedosto).getLines()++Source.fromFile("puhujandata/aihiot1.txt").getLines() ).filter(x => x!="" && x.split("->")(0).contains("Kysymysmerkki")).toVector
+    val vektori = ( Source.fromFile(tiedosto).getLines()++Source.fromFile(vocabPath + "puhujandata/aihiot1.txt").getLines() ).filter(x => x!="" && x.split("->")(0).contains("Kysymysmerkki")).toVector
     println("vektori.size : " + vektori.size)
     sentenceFromConditions(vektori,l)
   }
@@ -356,7 +358,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     new Sentence(words)
   }
 
-  val lauseet = Source.fromFile("puhujandata/lauseet.txt").getLines().toBuffer
+  val lauseet = Source.fromFile(vocabPath + "puhujandata/lauseet.txt").getLines().toBuffer
 
   private def aihevastaus(tiedosto: String): Option[Sentence] = {
     val soos = lauseet.map(x => x.drop(x.indexOf("{")+1).dropRight(1).split(","))

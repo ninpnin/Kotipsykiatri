@@ -16,6 +16,7 @@ import scala.util.Random
 import scala.io.StdIn.readLine
 
 import utilities.rng.shuffle
+import utilities.Config.vocabPath
 
 object kotipsykiatri extends SimpleSwingApplication {
   
@@ -61,7 +62,8 @@ object kotipsykiatri extends SimpleSwingApplication {
     maximumSize = new Dimension(512,512)
   }
 
-  val kuvanSijainti = "user1.png"
+  println("asdlnnljsdlnjdsalnj")
+  val kuvanSijainti = vocabPath + "user1.png"
   val kuvaPaneeli = new BoxPanel(Orientation.Vertical) {        // kotipsykiatrin kuva/ikoni
     val bufferedImage = ImageIO.read(new File(kuvanSijainti))
     override def paintComponent(g:Graphics2D) = {
@@ -69,6 +71,8 @@ object kotipsykiatri extends SimpleSwingApplication {
     }
     maximumSize = new Dimension(512,512)
   }
+  println("doned")
+
 
   val textField = new TextField(28)
   textField.tooltip_=("Kirjoita viestisi tähän.")
@@ -117,9 +121,9 @@ object kotipsykiatri extends SimpleSwingApplication {
     tekstiPaneeli.contents += flow
   }
 
-  this.init(Map("startingFiles/association.txt"->"puhujandata/aiheet.txt",
-      "startingFiles/causalities.txt"->"puhujandata/causalities.txt",
-      "startingFiles/sentences.txt"->"puhujandata/lauseet.txt"))
+  this.init(Map( (vocabPath + "startingFiles/association.txt") -> (vocabPath + "puhujandata/aiheet.txt"),
+      (vocabPath + "startingFiles/causalities.txt")->(vocabPath + "puhujandata/causalities.txt"),
+      (vocabPath + "startingFiles/sentences.txt")->(vocabPath + "puhujandata/lauseet.txt") ))
   
   new Thread(botThread).start()
 

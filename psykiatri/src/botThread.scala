@@ -1,6 +1,6 @@
 package gui
 
-import convo.Sentence
+import dictionary.Sentence
 
 object botThread extends Runnable {    // puhujan hallitsija
 
