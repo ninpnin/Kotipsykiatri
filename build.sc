@@ -14,4 +14,10 @@ object psykiatri extends ScalaModule {
 
   }
 
+  object stems extends ScalaModule {
+  	def moduleDeps = Seq(utilities, dictionary)
+    def scalaVersion = "2.12.4"
+
+  }
+
 }
