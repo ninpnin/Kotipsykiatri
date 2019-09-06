@@ -1,4 +1,4 @@
-package convo
+package dictionary
 
 import scala.collection.mutable.Buffer
 

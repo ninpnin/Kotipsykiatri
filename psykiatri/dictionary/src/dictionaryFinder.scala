@@ -1,10 +1,11 @@
-package convo
+package dictionary
 
 import scala.io.Source
 
-import convo.Sentence
-import convo.Word
+import dictionary.Sentence
+import dictionary.Word
 import utilities.letterCollection.{numerot, aakkoset}
+import utilities.Config.vocabPath
 
 object dictionaryFinder {
 
@@ -64,7 +65,7 @@ object dictionaryFinder {
     if (sana.isEmpty)
       sana = getPredicate(text)
     if (sana.isEmpty)
-      sana = getNominal(text,s("sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetNominit.txt"))//haePredikaatti(text)
+      sana = getNominal(text,s(vocabPath + "sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetNominit.txt"))//haePredikaatti(text)
     if  (sana.isEmpty)
       sana = getParticipe(text)
     if (sana.isEmpty)
@@ -78,7 +79,7 @@ object dictionaryFinder {
 
   private def getPronoun(sana: String): Option[Word] = {
     var s: Option[Word] = None
-    val a = Source.fromFile("sanastot/yleiset/pronominit.txt").getLines().toVector
+    val a = Source.fromFile(vocabPath + "sanastot/yleiset/pronominit.txt").getLines().toVector
     var counter = 0
     while (s.isEmpty && counter < a.size) {
       val rivi = a(counter).split(",")
@@ -152,7 +153,7 @@ object dictionaryFinder {
     val sananpituus = haettava.length
     val alkukirjain = haettava(0).toUpper
     var found: Option[Word] = None
-    val tiedosto = Source.fromFile("sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetVerbit.txt")
+    val tiedosto = Source.fromFile(vocabPath + "sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetVerbit.txt")
     val tiedostonrivit = tiedosto.getLines().toVector//.filter { x => x(0)==sana(0) }
     val koko = tiedostonrivit.size
     var counter = 0
@@ -209,7 +210,7 @@ object dictionaryFinder {
     val sananpituus = haettava.length
     val alkukirjain = haettava(0).toUpper
     var found: Option[Word] = haeVerbi(haettava)
-    val tiedosto = Source.fromFile("sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetVerbit.txt")
+    val tiedosto = Source.fromFile(vocabPath + "sanastot/"+alkukirjain+"/"+alkukirjain+"saannollisetVerbit.txt")
     val tiedostonrivit = tiedosto.getLines().toVector
     val koko = tiedostonrivit.size
     var counter = 0
@@ -240,7 +241,7 @@ object dictionaryFinder {
 
   private def haeVerbi(haettava: String): Option[Word] = {  // epäsäännölliset verbit
     var found: Option[Word] = None
-    val b = Source.fromFile("sanastot/yleiset/verbit.txt").getLines().toVector
+    val b = Source.fromFile(vocabPath + "sanastot/yleiset/verbit.txt").getLines().toVector
     var counter = 0
     while (found.isEmpty && counter < b.size) {
       val rivi = b(counter).split(",")
@@ -261,7 +262,7 @@ object dictionaryFinder {
   private def haeErisnimi(text: String): Option[Word] = {
     var found: Option[Word] = None
     val alkukirjain = text(0)
-    val soossit = Source.fromFile("sanastot/erisnimet.txt").getLines.toVector.filter(_(0) == alkukirjain)
+    val soossit = Source.fromFile(vocabPath + "sanastot/erisnimet.txt").getLines.toVector.filter(_(0) == alkukirjain)
     val size = soossit.size
     var counter = 0
     while (counter < size && found.isEmpty) {
@@ -286,7 +287,7 @@ object dictionaryFinder {
 
   def getCompound(t: String) = {
     val alkukirjain = t(0).toUpper
-    val source = Source.fromFile("sanastot/" + alkukirjain +"/yhdyssanat.txt").getLines().toVector
+    val source = Source.fromFile(vocabPath + "sanastot/" + alkukirjain +"/yhdyssanat.txt").getLines().toVector
     getCompoundByInitial(t,source)
   }
   def getCompoundByInitial(text: String, vektori: Vector[String]): Option[Word] = {
@@ -325,7 +326,7 @@ object dictionaryFinder {
     val kirjain = sana(0).toUpper
     var s: Option[Word] = None
     if (aakkoset.contains(kirjain.toLower)) {
-      val a = Source.fromFile("sanastot/" + kirjain + "/" + kirjain + "epasaannolliset.txt").getLines().toVector
+      val a = Source.fromFile(vocabPath + "sanastot/" + kirjain + "/" + kirjain + "epasaannolliset.txt").getLines().toVector
       var counter = 0
       while (s == None && counter < a.size) {
         val rivi = a(counter).dropRight(4)

@@ -1,6 +1,7 @@
 package dictionary
 
 import utilities.letterCollection.aakkoset
+import utilities.Config.vocabPath
 
 import scala.io.Source
 
@@ -11,17 +12,17 @@ object wordInflector {
     val initial = t.head.toUpper
     var palautus: Option[String] = None
     var index = 0
-    val rimpsu = "sanastot/" + initial + "/" + initial   // jokaisen käytettävän tiedoston alku
+    val rimpsu = vocabPath + "sanastot/" + initial + "/" + initial   // jokaisen käytettävän tiedoston alku
     if (aakkoset.contains(initial.toLower)) {
       val filenames = Vector(rimpsu + "saannollisetVerbit.txt", rimpsu + "saannollisetNominit.txt",
           rimpsu+"epasaannolliset.txt",
-          "sanastot/erisnimet.txt")
+          vocabPath + "sanastot/erisnimet.txt")
       while (palautus.isEmpty && index < 4) {
         palautus = this.posByInitial(t, filenames(index))
         index += 1
       }
       if (palautus.isEmpty)
-        palautus = posCompound(t, "sanastot/" + initial + "/yhdyssanat.txt")
+        palautus = posCompound(t, vocabPath + "sanastot/" + initial + "/yhdyssanat.txt")
     }
     palautus
   }
@@ -106,7 +107,7 @@ object wordInflector {
   
   private def commonVerb(s: String, inflection: Int): Option[String] = {
     var a: Option[String] = None
-    val b = Source.fromFile("sanastot/yleiset/verbit.txt").getLines().toVector
+    val b = Source.fromFile(vocabPath + "sanastot/yleiset/verbit.txt").getLines().toVector
     for (rivi <- b) {
       val split = rivi.split(",")
       if (split.head == s && inflection < split.length )
@@ -117,7 +118,7 @@ object wordInflector {
   
   private def commonPronoun(s: String,muoto: Int): Option[String] = {
     var a: Option[String] = None
-    val b = Source.fromFile("sanastot/yleiset/pronominit.txt").getLines().toVector
+    val b = Source.fromFile(vocabPath + "sanastot/yleiset/pronominit.txt").getLines().toVector
     for (rivi <- b) {
       val split = rivi.split(",")
       if (split.head == s && muoto < split.length )

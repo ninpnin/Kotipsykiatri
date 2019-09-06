@@ -1,6 +1,4 @@
-package convo
-
-import dictionary.wordInflector
+package dictionary
 
 class Word(text: String) {
 

@@ -1,4 +1,5 @@
-talvi,tulo
-sohva,istuskella
-tee,itsemurha
-vappu,viettää,huvittaa
+säkä,aika
+kysymys,vastata
+alkaa,muistuttaa
+auto,jääkarhu,tappaa
+pai,jäädä
