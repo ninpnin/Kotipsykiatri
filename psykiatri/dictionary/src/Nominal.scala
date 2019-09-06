@@ -4,13 +4,15 @@ abstract class Nominal(val sana: String, astevaihtelu: Char) {
     def inflect(form: Int) = this.taivuta(form % 20, form >= 20)
     def taivuta(nominalCase: Int, plural: Boolean): String
     val a = grammarHelper.vokaali("a", sana)
+    val stems: Set[String]
 }
 
 case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi VALO
   
   val etu = s
   val edu = if (g!='X') grammarHelper.gradation(g.toString, s) else sana
-  
+  val stems = Set(etu, edu)
+
   def taivuta(nominalCase: Int, plural: Boolean) = {
     if (!plural) {
       nominalCase match {
@@ -47,6 +49,7 @@ case class Kotus1(s: String, g: Char) extends Nominal(s,g) { // KOTUS #1 tyyppi 
 case class Kotus2(s: String, g: Char) extends Nominal(s,g) {  //KOTUS TYPE PALVELU
 
   val palvelu: String = sana
+  val stems = Set(palvelu)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {
@@ -81,6 +84,7 @@ case class Kotus2(s: String, g: Char) extends Nominal(s,g) {  //KOTUS TYPE PALVE
 
 case class Kotus3(s: String, g: Char) extends Nominal(s,g) { //KOTUS TYPE VALTIO
   val valtio: String = s
+  val stems = Set(valtio)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {
@@ -120,6 +124,7 @@ case class Kotus5(s: String, g: Char) extends Nominal(s,g) {
   val takki = if ('i' == sana.last) sana else sana+"i"
   val taki = if (g!='X') grammarHelper.gradation(g.toString, takki) else s
   val tak = taki.dropRight(1)
+  val stems = Set(takk, tak)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {
@@ -156,6 +161,7 @@ case class Kotus6(s: String, g: Char) extends Nominal(s,g) {  // KOTUS TYPE PAPE
 
   val paperi = if (s.last!='i') s+"i" else s
   val paper = paperi.dropRight(1)
+  val stems = Set(paper)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = {
 
@@ -200,6 +206,8 @@ case class Kotus9(s: String, g: Char) extends Nominal(s,g) {
   val hiet = s.dropRight(1)
   val hied = hieda.dropRight(1)
 
+  val stems = Set(hiet, hied)
+
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {
         case 1 | 2 => hieda+"n" // gen. ja akk. ovat samat. Kï¿½ytï¿½nnï¿½ssï¿½ kaikissa nï¿½in.
@@ -238,6 +246,8 @@ case class Kotus10(s: String, g: Char) extends Nominal(s,g) {
 
   val huop = huopa.dropRight(1)
   val huov = huova.dropRight(1)
+
+  val stems = Set(huop, huov)
 
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
@@ -279,6 +289,8 @@ case class Kotus12(s: String, g: Char) extends Nominal(s,g) {
   val kulkija = s
   val kulkij = kulkija.dropRight(1)
 
+  val stems = Set(kulkij)
+
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
     if (!plural) {
@@ -317,6 +329,8 @@ case class Kotus38(s: String, g: Char) extends Nominal(s,g) {
 
   val nainen = s
   val nais = s.take(s.size-3)+"s"
+
+  val stems = Set(nainen, nais)
 
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
@@ -357,6 +371,8 @@ case class Kotus39(s: String, g: Char) extends Nominal(s,g) {  //VASTAUS
   val vastaus = s
   val vastauks = s.dropRight(1)+"ks"
 
+  val stems = Set(vastauks, vastaus)
+
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
     if (!plural) {
@@ -394,6 +410,8 @@ case class Kotus39(s: String, g: Char) extends Nominal(s,g) {  //VASTAUS
 case class Kotus40(s: String, g: Char) extends Nominal(s,g) {
   val valmius = s
   val valmiu = s.dropRight(1)
+
+  val stems = Set(valmiu)
 
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
@@ -433,6 +451,8 @@ case class Kotus48(s: String, g: Char) extends Nominal(s,g) {
 
   val laite = s
   val laitte = if (g == 'D') grammarHelper.inverse("D", s.dropRight(1))+s.last else if (g != 'X') grammarHelper.inverse(g.toString, s) else s
+
+  val stems = Set(laite, laitte)
 
   def taivuta(nominalCase: Int, plural: Boolean): String = if (!plural) {
       nominalCase match {

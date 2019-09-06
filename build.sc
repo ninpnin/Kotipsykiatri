@@ -21,6 +21,12 @@ object psykiatri extends ScalaModule {
     def scalaVersion = "2.12.4"
   }
 
+  object stems extends ScalaModule {
+  	def moduleDeps = Seq(utilities, dictionary)
+    def scalaVersion = "2.12.4"
+
+  }
+
   object convo extends ScalaModule {
   	def moduleDeps = Seq(dictionary, utilities)
     def scalaVersion = "2.12.4"
