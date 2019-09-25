@@ -1,7 +1,4 @@
-{moi}->moika&moi
-{?}->joo
-0xxx0xxx{hieno,esitys}->kitos&komentista
-{}->ninp&nin
+{}->xxxxxxxx{ninp,nin}
 
 xxxxxxxx{kyllä,juu}->xxxxxxxx{niin,niin}
 xxxx{okei}->1xxx3xxx0xxx{ei,osa,sanoa}

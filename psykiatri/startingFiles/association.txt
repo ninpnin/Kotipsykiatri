@@ -1,9 +1,1 @@
-kalle,kysyä
-aurinko,paistaa
-elämä,elämä
-leuka,rinta,pettymys,uusia
-kuunnella,ajaa
-uusinta,levy
-vala,vala
-rasta,äijä
-liittyä,seurata
+
