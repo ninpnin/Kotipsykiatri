@@ -2,9 +2,9 @@ package convo
 
 import scala.collection.mutable.Buffer
 import scala.io.Source
-import dictionary.dictionaryFinder._
+import dictionary.DictionaryFinder._
 import dictionary.encoder.{simpleDecode,decode}
-import dictionary.dictionaryFinder
+import dictionary.DictionaryFinder
 import dictionary.encoder
 import dictionary.{Word, Sentence}
 
@@ -17,11 +17,11 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
   var debugging = false
   def debugOn() = {
     this.debugging = true
-    reactionAdder.debuggaus = true
+    ReactionAdder.debuggaus = true
   }
   def debugOff() = {
     this.debugging = false
-    reactionAdder.debuggaus = false
+    ReactionAdder.debuggaus = false
   }
 
   var state = 0
@@ -149,6 +149,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     palautus
   }
 
+  // Kuinka hyvin lause vastaa ehtoa
   def rate(l: Sentence, ehto: String): Double = {
     var rating = 0.0
     val indeksi = ehto.indexOf("{")
@@ -175,7 +176,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
         val sanat1 = sanat.filter( x => x.sanaluokka== Some(sanaluokka)).map(x=> x.taivutusmuoto.getOrElse(0))
         if (sanat1.intersect(i._1).nonEmpty) rating += 0.9
       } else {
-        val sanaluokka = dictionaryFinder.getWord(i._2).sanaluokka.getOrElse("fdshfdshdsf")
+        val sanaluokka = DictionaryFinder.getWord(i._2).sanaluokka.getOrElse("fdshfdshdsf")
         val sanat1 = sanat.filter( x => x.sanaluokka== Some(sanaluokka)).map(x=> x.taivutusmuoto.getOrElse(0))
         if (sanat1.intersect(i._1).nonEmpty) rating += 0.4
       }
@@ -192,89 +193,53 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
  def lause1bCOPY(s: String, l: Sentence): Sentence = {
     val sanat = Buffer[Word]()
     val split = s.split("->")
-    val s0 = split(0)
+    val s0 = cleanHelper(split(0)) // poista mahdolliset suffiksit ehdosta
     val s1 = split(1)
     val lsanat = l.wordList
 
-    if (!s1.contains("{")) {  // muotoa minä&ostin&jäätelön
-      for (i<- s1.split("&")) {
-        if (i.startsWith("(")) {
-          val j = i.substring(2, i.size-1).split(",")
-          var sanake: Option[Word] = None
-          if (i(1)=='V') {      // (Vmaksaa,3,matchtime)
-            val a = j(0)
-            val b: Int = j(1) match {
-              case "matchnumber" => matchNumber(l)
-              case "matchtime" => matchTime(l)
-              case default => default.toInt
-            }
-            val c: Int = j(2) match {
-              case "matchnumber" => matchNumber(l)
-              case "matchtime" => {
-                val matched = matchTime(l)
-                if (debugging) println("matchattu aika : " + matched)
-                matched
-              }
-              case default => default.toInt
-            }
-            sanake = Some(new Word(a,b + 7*c-7))
+    val koodit0 = s0.take(s0.indexOf("{")).grouped(4).toVector.map { x => encoder.decode(x) }
+    val sa0 = s0.drop(s0.indexOf("{")+1).dropRight(1).split(",")
+    val koodit1 = s1.take(s1.indexOf("{")).grouped(4).toVector.map { x => encoder.simpleDecode(x) }
+    val sa1 = s1.drop(s1.indexOf("{")+1).dropRight(1).split(",")
+
+    // Tarkista onko geneerisiä relaaatioita
+    // ts onko lauseessa johon vastataan sana jota pitää käyttää vastauksessa
+
+    // ostin X:n -> minkä merkkisen X:n
+    // ostin läppärin -> minkä merkkisen läppärin
+
+    if (sa0.count(checkF(_))>0) {
+      for (i <- sa0 zip koodit0) {
+        if (checkF(i._1) && sa1.contains(i._1)) {
+          var ab = ""
+          val sanaluokka = i._1(0) match {
+            case 'S' => "substantiivi"
+            case 'A' => "adjektiivi"
+            case _ => "muut"
+          }
+          if (sanaluokka == "muut") {
+            ab = lsanat.find(x =>x.sanaluokka == None && x.perusmuoto!= None).get.perusmuoto.get
           } else {
-            val a = getInfinitive(j(0))
-            val b: Int = j(1) match {
-              case "matchnumber" => matchNumber(l)
-              case "matchtime" => matchTime(l)
-              case default => default.toInt
-            }
-            val c: Int = j(1) match {
-              case "matchnumber" => matchNumber(l)
-              case "matchtime" => matchTime(l)
-              case default => default.toInt
-            }
-            sanake = Some(new Word(a,c))
+            ab = lsanat.find(x =>x.sanaluokka == Some(sanaluokka) && i._2.contains(x.taivutusmuoto.getOrElse(99))).get.perusmuoto.get
+            //println(ab)
           }
-          if (sanake.isDefined) sanat += sanake.get
-        } else {
-          sanat += getWord(i)
+          sa1(sa1.indexOf(i._1)) = ab
         }
       }
-    } else {  // muotoa 0xxx8xxx1xxx{minä,ostaa,jäätelö}
 
-      val koodit0 = s0.take(s0.indexOf("{")).grouped(4).toVector.map { x => encoder.decode(x) }
-      val sa0 = s0.drop(s0.indexOf("{")+1).dropRight(1).split(",")
-      val koodit1 = s1.take(s1.indexOf("{")).grouped(4).toVector.map { x => encoder.simpleDecode(x) }
-      val sa1 = s1.drop(s1.indexOf("{")+1).dropRight(1).split(",")
+    }
 
-      if (sa0.count(checkF(_))>0) {
-        for (i <- sa0 zip koodit0) {
-          if (checkF(i._1) && sa1.contains(i._1)) {
-            var ab = ""
-            val sanaluokka = i._1(0) match {
-              case 'S' => "substantiivi"
-              case 'A' => "adjektiivi"
-              case _ => "muut"
-            }
-            if (sanaluokka == "muut") {
-              ab = lsanat.find(x =>x.sanaluokka == None && x.perusmuoto!= None).get.perusmuoto.get
-            } else {
-              ab = lsanat.find(x =>x.sanaluokka == Some(sanaluokka) && i._2.contains(x.taivutusmuoto.getOrElse(99))).get.perusmuoto.get
-              //println(ab)
-            }
-            sa1(sa1.indexOf(i._1)) = ab
-          }
-        }
-
-      }
-      for (i <- sa1 zip koodit1) {
-          if (i._1!="")
-            sanat += new Word(i._1,i._2)
-      }
+    // Luo lause-olion sanat
+    for (i <- sa1 zip koodit1) {
+        if (i._1!="")
+          sanat += new Word(i._1,i._2)
     }
     if (debugging) {println("Käytettiin ehtoa : " + s0); println("Sopivuus : " +rate(l,s0))}
     new Sentence(sanat)
   }
 
 
-  def checkF(t: String): Boolean = if (t.size == 2) {  //tarkistaa formaatin
+  def checkF(t: String): Boolean = if (t.size == 2) { // tarkistaa formaatin
     if (('0' to '9').contains(t(1))) true else false  // (yleistetty ehto)
   } else false                                        // esim auto on "S1" koska se on substantiivi
                                                       // numero erottaa yleistettävät sanat toisistaan
@@ -365,7 +330,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     val topics = keskustelu
       .aiheet
       .intersect(soos.flatten)
-      .filter(!reactionAdder.banni.contains(_))
+      .filter(!ReactionAdder.banni.contains(_))
 
     if (topics.nonEmpty) {
       val indeksi = soos.indexOf(soos.maxBy(x => x.intersect(topics).length) )
@@ -386,7 +351,23 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
     if (debugging) println("Ei löytynyt sopivia ehtoja. Arvottiin yleisvastaus.")
     val soos = Source.fromFile(tiedosto).getLines.toVector
     val rivi = soos(rng.nextInt(soos.size))
-    dictionaryFinder.getSentence(rivi)
+    DictionaryFinder.getSentence(rivi)
+  }
+
+  // Poista suffiksit ehdoista
+  // {se+pä, kiva} => {se, kiva}
+  private def cleanHelper(s: String) = {
+    val words = s.split(',').toVector.map(_.split('+').head)
+    words.reduceLeft(_ + "," + _)
+  }
+  def cleanCondition(s: String) = {
+    val lists = s.split('{')
+    for (i <- 1 until lists.length) {
+      val current = lists(i).split('}')
+      lists(i) = cleanHelper(current.head) + "}" + current.last
+    }
+
+    lists.reduceLeft(_ + "{" + _)
   }
 }
 

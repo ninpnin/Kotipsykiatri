@@ -6,7 +6,7 @@ import java.io.PrintWriter
 import dictionary.{Word, Sentence}
 import utilities.Config.vocabPath
 
-object reactionAdder {
+object ReactionAdder {
 
   //Näytetäänkö debuggausviestit konsolissa sitä mukaa kun
   //ohjelma luo lauseita ja tallentaa asioita tiedostoihin
@@ -110,8 +110,7 @@ object reactionAdder {
 
     val inflections = wordList.map(inflectionCode(_)).reduceLeft(_ + _)
 
-    def textify(s: Word) = s.perusmuoto.getOrElse(s.teksti)
-    val infinitives = wordList.map(textify(_)).reduceLeft(_ + "," + _)
+    val infinitives = wordList.map(_.format).reduceLeft(_ + "," + _)
     inflections + "{" + infinitives + "}" // 8xxx0xxx + { + mennä,sinne + }
   }
 

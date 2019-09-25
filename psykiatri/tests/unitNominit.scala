@@ -1,7 +1,7 @@
 package tests
 
 import dictionary.{Kotus1,Kotus5,Kotus6,Kotus10,Kotus9,Kotus12,Kotus38,Kotus39}
-import dictionary.dictionaryFinder.getWord
+import dictionary.DictionaryFinder.getWord
 
 import org.scalatest.FlatSpec
 

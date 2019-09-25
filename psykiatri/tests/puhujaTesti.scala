@@ -1,6 +1,6 @@
 package tests
 
-import dictionary.dictionaryFinder
+import dictionary.DictionaryFinder
 import convo.SpeechGenerator
 import convo.Conversation
 import scala.io.StdIn.readLine
@@ -13,13 +13,13 @@ object puhujaTesti extends App {
   
   def t1() = {
     a = readLine("kirjoita lause")
-    val kaannetty = munPuhuja.kaannaLause(dictionaryFinder.getSentence(a))
+    val kaannetty = munPuhuja.kaannaLause(DictionaryFinder.getSentence(a))
     println(kaannetty)
     
   }
   def t2() = {
       val read = readLine("lause tähän : ")
-      val lause = dictionaryFinder.getSentence(read)
+      val lause = DictionaryFinder.getSentence(read)
       val ehto = readLine("ehto tähän : ")
       println(munPuhuja.rate(lause, ehto))
   }

@@ -1,13 +1,13 @@
 package tests
 
-import dictionary.dictionaryFinder
+import dictionary.DictionaryFinder
 import dictionary.encoder
 import scala.io.StdIn.readLine
 
 object koodaa extends App {
 
   def koodaaLause(s: String) = {
-    val lause = dictionaryFinder.getSentence(s)
+    val lause = DictionaryFinder.getSentence(s)
     var string = ""
     var string2 = "{"
     for (i <- lause.wordList) {

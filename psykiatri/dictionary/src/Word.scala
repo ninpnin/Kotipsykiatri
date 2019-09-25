@@ -12,12 +12,18 @@ class Word(text: String) {
   def teksti: String = if (suffix.isEmpty) text else text + suffix.get
   def recognized: Boolean = this.perusmuoto.isDefined
 
+  def format = {
+    val suff = if (suffix.isEmpty) "" else "+" + suffix.get
+    this.perusmuoto.getOrElse(this.text) + suff
+  }
+
   override def toString() = "T : " + teksti + ",S " + sanaluokka + ", " + perusmuoto + ", " + taivutusmuoto
 
   def this(s: String, muoto: Int) = {
-    this(wordInflector.inflect(s, muoto))
-    this.perusmuoto = Some(s)
+    this(wordInflector.inflect(s.split('+').head, muoto))
+    this.perusmuoto = Some(s.split('+').head)
     this.taivutusmuoto = Some(muoto)
+    if (s.contains('+')) this.suffix = Some(s.split('+').last)
   }
 
   override def clone: Word = {

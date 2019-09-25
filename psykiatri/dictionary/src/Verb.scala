@@ -16,6 +16,8 @@ abstract class Verb(val sana: String, gradation: Char) {
   val a = grammarHelper.vokaali("a", sana)
   val u = grammarHelper.vokaali("u", sana)
 
+  val stems: Set[String]
+
   def taivuta(muoto: Int): String
 
 }
@@ -27,6 +29,8 @@ case class Kotus52(s: String, g: Char) extends Verb(s,g) {  // KOTUS TYPE SANOA
 
   val avautu = s.dropRight(1)
   val avaudu = heikko
+
+  val stems: Set[String] = Set(avautu, avaudu)
 
   def taivuta(muoto: Int) = {
     muoto match {
@@ -69,6 +73,8 @@ case class Kotus53(s: String, g: Char) extends Verb(s,g) {  // KOTUS TYPE MUISTA
   val aseta = if (g!='X') grammarHelper.gradation(g.toString(), s.dropRight(1)) else s.dropRight(1)
   val aset = aseta.dropRight(1)
 
+  val stems: Set[String] = Set(asett, aset)
+
   def taivuta(muoto: Int) = {
     muoto match {
       case 1 => aseta+"n"
@@ -105,6 +111,8 @@ case class Kotus62(s: String, g: Char) extends Verb(s,g) {  // KOTUS TYPE VOIDA
 
   val voi = s.dropRight(2)
   val void = s.dropRight(1)
+
+  val stems: Set[String] = Set(voi, void)
 
   def taivuta(muoto: Int) = {
     muoto match {
@@ -143,11 +151,11 @@ case class Kotus67(s: String, g: Char) extends Verb(s,g) {  // KOTUS TYPE TULLA
 
   val huidel = s.dropRight(2)
 
-  val heikko = s.dropRight(2)
-
   val huitel = if (g=='D') { s.dropRight(4)+"k"+s.substring(s.length-4, s.length-2)
     } else if(g!='X') { grammarHelper.inverse(g.toString,s.dropRight(2))
     } else s.dropRight(2)
+
+  val stems = Set(huidel, huitel)
 
   def taivuta(muoto: Int) = {
     muoto match {
@@ -187,6 +195,8 @@ case class Kotus73(s: String, g: Char) extends Verb(s,g) {  // KOTUS TYPE SALATA
   val hanga = s.dropRight(2)
   val hanka = if (g=='D') s.dropRight(3)+a else if (g!='X') grammarHelper.inverse(g.toString,s.dropRight(2)) else s.dropRight(2)
 
+  val stems = Set(hanga, hanka)
+  
   def taivuta(muoto: Int) = {
     muoto match {
       case 1 => hanka+a+"n"

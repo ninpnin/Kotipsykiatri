@@ -2,7 +2,7 @@ package convo
 
 import scala.collection.mutable.Buffer
 import scala.io.Source
-import dictionary.{Word, Sentence, dictionaryFinder}
+import dictionary.{Word, Sentence, DictionaryFinder}
 import utilities.rng.lottery
 import utilities.Config.vocabPath
 
@@ -39,11 +39,12 @@ class Conversation {
   }
 
   def appendSentence(s: String, kayttaja: Boolean): Unit = if (s!="") {
-    val tuple = (dictionaryFinder.getSentence(s.replaceAll("[^A-Za-z0-9._,_?_ä_ö_Ä_Ö ]", "")),kayttaja)
+  	val str = cleanStr(s)
+    val tuple = (DictionaryFinder.getSentence(str), kayttaja)
     this.appendSentence(tuple._1, tuple._2)
     if (kayttaja) {
-      if (loytynyt) opiV() else reactionAdder.opiAiheista(tuple._1, this.mahdollisetAiheet)
-      reactionAdder.aiheet(tuple._1)
+      if (loytynyt) opiV() else ReactionAdder.opiAiheista(tuple._1, this.mahdollisetAiheet)
+      ReactionAdder.aiheet(tuple._1)
     }
   }
 
@@ -66,11 +67,13 @@ class Conversation {
         val l2 = lauseet(index2)._1
         println(l2.noneCount, l2.length)
         if ( l2.noneCount < 2 && l2.noneCount < l2.length) {
-          val causality = reactionAdder.opiVastauksesta(l1, l2)
-          reactionAdder.addCausality( causality )
+          val causality = ReactionAdder.opiVastauksesta(l1, l2)
+          ReactionAdder.addCausality( causality )
         }
       }
     }
   }
+
+  private def cleanStr(s: String) = s.replaceAll("[^A-Za-z0-9._,_?_ä_ö_Ä_Ö ]", "")
   
 }

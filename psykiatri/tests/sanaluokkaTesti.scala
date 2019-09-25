@@ -1,14 +1,14 @@
 package tests
 
 import convo.Word
-import dictionary.dictionaryFinder
+import dictionary.DictionaryFinder
 
 object testi1 extends App {
   
   val lause1string = readLine("Kirjoita testilause tähän.")
   val lauseensanat = lause1string.filter(x => !(Vector('.',',','[',']').contains(x) )).toLowerCase.split(" ")
   val aika1 = System.currentTimeMillis()
-  val lauseenvektori = Vector.tabulate[Word](lauseensanat.size)(x => dictionaryFinder.getWord(lauseensanat(x)))
+  val lauseenvektori = Vector.tabulate[Word](lauseensanat.size)(x => DictionaryFinder.getWord(lauseensanat(x)))
   val aika2 = System.currentTimeMillis()
   for (i <- lauseenvektori) {
     println(i)

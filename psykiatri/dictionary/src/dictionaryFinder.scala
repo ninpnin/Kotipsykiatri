@@ -7,7 +7,7 @@ import dictionary.Word
 import utilities.letterCollection.{numerot, aakkoset}
 import utilities.Config.vocabPath
 
-object dictionaryFinder {
+object DictionaryFinder {
 
   //Sanojen jälkiliitteet, jotka sivuutetaan tunnistaessa
   //Esimerkiksi olisi-pa
@@ -339,34 +339,53 @@ object dictionaryFinder {
     s
   }
 
-  def getInfinitive(t: String): String = getWord(t).perusmuoto.getOrElse("homovitu")
-  private def createNominal(text: String): Nominal = {
-    val tiedot = text.takeRight(4)
-    val perusmuoto = text.dropRight(4)
-    tiedot.takeRight(2) match {  //
-      case "02" => Kotus2(perusmuoto,tiedot(1))
-      case "03" => Kotus3(perusmuoto,tiedot(1))
-      case "05" => Kotus5(perusmuoto,tiedot(1))
-      case "06" => Kotus6(perusmuoto,tiedot(1))
-      case "09" => Kotus9(perusmuoto,tiedot(1))
-      case "10" => Kotus10(perusmuoto,tiedot(1))
-      case "12" => Kotus12(perusmuoto,'X')
-      case "38" => Kotus38(perusmuoto,'X')
-      case "39" => Kotus39(perusmuoto,'X')
-      case "40" => Kotus40(perusmuoto,'X')
-      case "48" => Kotus48(perusmuoto,tiedot(1))
-      case _ => Kotus1(perusmuoto,tiedot(1))
+  def getInfinitive(t: String): String = getWord(t).perusmuoto.getOrElse("undefined")
+
+  def getStems(t: String) = {
+    val code = t.takeRight(4)
+    code(0) match {
+      case 'V' => createVerb(t).stems
+      case _ => createNominal(t).stems
     }
   }
+
+  private def createNominal(text: String): Nominal = {
+    val tiedot = text.takeRight(4)
+    val stem = text.dropRight(4)
+    val code = tiedot.takeRight(2)
+    val gradation = tiedot(1)
+    matchNominal(code, stem, gradation)
+  }
+
   private def createVerb(text: String): Verb = {
     val tiedot = text.takeRight(4)
-    val perusmuoto = text.dropRight(4)
-    tiedot.takeRight(2) match {  //
-      case "53" => Kotus53(perusmuoto,tiedot(1))
-      case "62" => Kotus62(perusmuoto,tiedot(1))
-      case "67" => Kotus67(perusmuoto,tiedot(1))
-      case "73" => Kotus73(perusmuoto,tiedot(1))
-      case _ => Kotus52(perusmuoto,tiedot(1))
-    }
+    val stem = text.dropRight(4)
+    val code = tiedot.takeRight(2)
+    val gradation = tiedot(1)
+    matchVerb(code, stem, gradation)
+  }
+
+  // Match code in format ['SX01' in valoSX01] to correct case classes 
+  private def matchNominal(code: String, stem: String, gradation: Char): Nominal = code match {  //
+    case "02" => Kotus2(stem, gradation)
+    case "03" => Kotus3(stem, gradation)
+    case "05" => Kotus5(stem, gradation)
+    case "06" => Kotus6(stem, gradation)
+    case "09" => Kotus9(stem, gradation)
+    case "10" => Kotus10(stem, gradation)
+    case "12" => Kotus12(stem,'X')
+    case "38" => Kotus38(stem,'X')
+    case "39" => Kotus39(stem,'X')
+    case "40" => Kotus40(stem,'X')
+    case "48" => Kotus48(stem, gradation)
+    case _ => Kotus1(stem, gradation)
+  }
+
+  private def matchVerb(code: String, stem: String, gradation: Char): Verb = code match {  //
+    case "53" => Kotus53(stem, gradation)
+    case "62" => Kotus62(stem, gradation)
+    case "67" => Kotus67(stem, gradation)
+    case "73" => Kotus73(stem, gradation)
+    case _ => Kotus52(stem, gradation)
   }
 }

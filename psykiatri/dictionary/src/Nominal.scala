@@ -328,9 +328,10 @@ case class Kotus12(s: String, g: Char) extends Nominal(s,g) {
 case class Kotus38(s: String, g: Char) extends Nominal(s,g) {
 
   val nainen = s
-  val nais = s.take(s.size-3)+"s"
+  val nai = s.take(s.size-3)
+  val nais = nai+"s"
 
-  val stems = Set(nainen, nais)
+  val stems = Set(nai)
 
   def taivuta(nominalCase: Int, plural: Boolean) = {
 
