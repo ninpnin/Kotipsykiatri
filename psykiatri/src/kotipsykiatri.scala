@@ -53,7 +53,7 @@ object kotipsykiatri extends SimpleSwingApplication {
 
   def command(): Unit = readLine("Syötä komento : ") match {
     case "aiheet" => println("aiheet :" + keskustelu.aiheet.fold("")((a,b)  => a + " " + b))
-    case _ => Unit
+    //case _ => Unit
   }
 
   this.addButton(false)

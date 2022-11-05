@@ -39,7 +39,7 @@ class Conversation {
   }
 
   def appendSentence(s: String, kayttaja: Boolean): Unit = if (s!="") {
-  	val str = cleanStr(s)
+    val str = cleanStr(s)
     val tuple = (DictionaryFinder.getSentence(str), kayttaja)
     this.appendSentence(tuple._1, tuple._2)
     if (kayttaja) {
@@ -65,7 +65,7 @@ class Conversation {
       if (index1 >= 0 && index2 >= 0 && index2 > index1) {
         val l1 = lauseet(index1)._1
         val l2 = lauseet(index2)._1
-        println(l2.noneCount, l2.length)
+        //println(l2.noneCount, l2.length)
         if ( l2.noneCount < 2 && l2.noneCount < l2.length) {
           val causality = ReactionAdder.opiVastauksesta(l1, l2)
           ReactionAdder.addCausality( causality )

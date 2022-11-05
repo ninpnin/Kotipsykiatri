@@ -132,7 +132,7 @@ class SpeechGenerator(assosiaatioTiedosto: String, aihioTiedosto: String, keskus
           } else t = currentSize
           if ( (t>= currentSize -1 && currentSize >1 ) || t >= currentSize) {
             bufferi += rivi
-            if (debugging) { println("Löydettiin sopiva ehto", rivi) }
+            //if (debugging) { println("Löydettiin sopiva ehto", rivi) }
           }
         }
       }
