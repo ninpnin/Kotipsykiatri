@@ -1,1 +1,5 @@
-
+vittu,haista,Tommi
+molemmat,valita
+vitutus,kuolla
+happo,vetää
+nisti,nisti,tunnistaa
